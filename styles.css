@@ -848,9 +848,11 @@ body {
 
 /* Juegos */
 .juegos-container {
-  display: grid;
+  display: flex;
+  justify-content: center;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 1rem;
+  margin-top: 1rem;
 }
 
 .juego {
@@ -873,12 +875,12 @@ body {
 .noticias-container {
   display: flex;
   flex-direction: column;
+  gap: 2rem;
 }
 
 .noticia-card {
   background: #f4f4f4;
   /* Fondo gris claro para tarjetas de noticias */
-  margin: 15px 0;
   padding: 20px;
   border-radius: 10px;
   transition: background-color 0.3s;
