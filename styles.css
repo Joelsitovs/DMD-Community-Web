@@ -18,7 +18,7 @@ body {
 .header {
   position: relative;
   /* Necesario para la superposición */
-  background-image: url("https://images-ext-1.discordapp.net/external/E470W-a25yhMQQV3azuZqv4t_efbFuQdNCF0fW0AAHo/https/i.imgur.com/OFiO9Md.png?format=webp&quality=lossless&width=960&height=384");
+  background-image: url("Assets/Images/Banner-DMDCommunity.webp");
   /* Cambia esta URL por la imagen que desees */
   background-size: cover;
   /* Cubre todo el espacio del header */
@@ -167,7 +167,7 @@ body {
   padding: 20px;
   border-radius: 10px;
   transition: transform 0.3s, box-shadow 0.3s;
-  background-image: url("/Assets/Images/Games/Brawl-Stars.webp");
+  background-image: url("Assets/Images/Games/Brawl-Stars.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -222,7 +222,7 @@ body {
   padding: 20px;
   border-radius: 10px;
   transition: transform 0.3s, box-shadow 0.3s;
-  background-image: url("/Assets/Images/Games/Clash-Royale.jpg");
+  background-image: url("Assets/Images/Games/Clash-Royale.jpg");
   /* Cambia la URL de la imagen */
   background-size: cover;
   background-position: center;
@@ -278,7 +278,7 @@ body {
   padding: 20px;
   border-radius: 10px;
   transition: transform 0.3s, box-shadow 0.3s;
-  background-image: url("/Assets/Images/Games/CSGO.webp");
+  background-image: url("Assets/Images/Games/CSGO.webp");
   /* Cambia a la URL de la imagen de CS:GO */
   background-size: cover;
   background-position: center;
@@ -334,7 +334,7 @@ body {
   padding: 20px;
   border-radius: 10px;
   transition: transform 0.3s, box-shadow 0.3s;
-  background-image: url("/Assets/Images/Games/Ea24.jpeg");
+  background-image: url("Assets/Images/Games/Ea24.jpeg");
   /* Cambia a la URL de la imagen de FIFA */
   background-size: cover;
   background-position: center;
@@ -390,7 +390,7 @@ body {
   padding: 20px;
   border-radius: 10px;
   transition: transform 0.3s, box-shadow 0.3s;
-  background-image: url("/Assets/Images/Games/Fall-Guys.png");
+  background-image: url("Assets/Images/Games/Fall-Guys.png");
   /* Cambia a la URL de la imagen de Fall Guys */
   background-size: cover;
   background-position: center;
@@ -446,7 +446,7 @@ body {
   padding: 20px;
   border-radius: 10px;
   transition: transform 0.3s, box-shadow 0.3s;
-  background-image: url("/Assets/Images/Games/F124.webp");
+  background-image: url("Assets/Images/Games/F124.webp");
   /* URL de imagen representativa de Formula 1 */
   background-size: cover;
   background-position: center;
@@ -500,7 +500,7 @@ body {
   padding: 20px;
   border-radius: 10px;
   transition: transform 0.3s, box-shadow 0.3s;
-  background-image: url("/Assets/Images/Games/Fortnite.jpg_large");
+  background-image: url("Assets/Images/Games/Fortnite.jpg_large");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -545,7 +545,7 @@ body {
   padding: 20px;
   border-radius: 10px;
   transition: transform 0.3s, box-shadow 0.3s;
-  background-image: url("/Assets/Images/Games/League-of-Legends.webp");
+  background-image: url("Assets/Images/Games/League-of-Legends.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -590,7 +590,7 @@ body {
   padding: 20px;
   border-radius: 10px;
   transition: transform 0.3s, box-shadow 0.3s;
-  background-image: url("/Assets/Images/Games/Pokemon.jpg");
+  background-image: url("Assets/Images/Games/Pokemon.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -635,7 +635,7 @@ body {
   padding: 20px;
   border-radius: 10px;
   transition: transform 0.3s, box-shadow 0.3s;
-  background-image: url("/Assets/Images/Games/Rocket-League.jpg");
+  background-image: url("Assets/Images/Games/Rocket-League.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -680,7 +680,7 @@ body {
   padding: 20px;
   border-radius: 10px;
   transition: transform 0.3s, box-shadow 0.3s;
-  background-image: url("/Assets/Images/Games/TFT.jpeg");
+  background-image: url("Assets/Images/Games/TFT.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -725,7 +725,7 @@ body {
   padding: 20px;
   border-radius: 10px;
   transition: transform 0.3s, box-shadow 0.3s;
-  background-image: url("/Assets/Images/Games/Valorant.jpg");
+  background-image: url("Assets/Images/Games/Valorant.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -770,7 +770,7 @@ body {
   padding: 20px;
   border-radius: 10px;
   transition: transform 0.3s, box-shadow 0.3s;
-  background-image: url("/Assets/Images/Games/Wild-Rift.webp");
+  background-image: url("Assets/Images/Games/Wild-Rift.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
