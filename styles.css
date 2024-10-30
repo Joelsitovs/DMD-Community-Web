@@ -164,6 +164,8 @@ body {
 .torneo-card .torneo-img {
   width: 150px !important;
   height: auto !important;
+  object-fit: cover;
+  box-sizing: content-box !important; /* Asegura que este estilo prevalezca */
 }
 
 .torneo-card {
