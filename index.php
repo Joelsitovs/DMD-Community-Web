@@ -1,3 +1,15 @@
+<?php
+include 'conexion.php';
+
+$consulta = "SELECT nombre, fecha_inicio, Premio, Precio_inscripcion, imagen FROM torneos";
+$resultado = $conexion->query($consulta);
+
+$torneos = [];
+while ($row = $resultado->fetch_assoc()) {
+    $torneos[] = $row;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,39 +43,19 @@
 				</button>
 
 				<div class="carousel__lista">
-					<div class="carousel__elemento">
-						<img src="img/2.png" alt="Rock and Roll Hall of Fame">
-						<p>Rock and Roll Hall of Fame</p>
-					</div>
-					<div class="carousel__elemento">
-						<img src="img/3.png" alt="Constitution Square - Tower I">
-						<p>Constitution Square - Tower I</p>
-					</div>
-					<div class="carousel__elemento">
-						<img src="img/4.png" alt="Empire State Building">
-						<p>Empire State Building</p>
-					</div>
-					<div class="carousel__elemento">
-						<img src="img/5.png" alt="Harmony Tower">
-						<p>Harmony Tower</p>
-					</div>
-	
-					<div class="carousel__elemento">
-						<img src="img/6.png" alt="Empire State Building">
-						<p>Empire State Building</p>
-					</div>
-					<div class="carousel__elemento">
-						<img src="img/7.png" alt="Harmony Tower">
-						<p>Harmony Tower</p>
-					</div>
-					<div class="carousel__elemento">
-						<img src="img/8.png" alt="Empire State Building">
-						<p>Empire State Building</p>
-					</div>
-					<div class="carousel__elemento">
-						<img src="img/9.png" alt="Harmony Tower">
-						<p>Harmony Tower</p>
-					</div>
+                    <?php foreach ($torneos as $torneo): ?>
+                        <div class="carousel__elemento">
+                            <img src="img/<?= $torneo['imagen'] ?>" alt="<?= $torneo['nombre'] ?>" class="carousel__imagen">
+                            <div class="carousel__informacion">
+                                <h3 class="carousel__titulo"><?= $torneo['nombre'] ?></h3>
+                                <p class="carousel__descripcion">
+                                    <span class="carousel__fecha"><?= $torneo['fecha_inicio'] ?></span>
+                                    <span class="carousel__premio"><?= $torneo['Premio'] ?></span>
+                                    <span class="carousel__precio"><?= $torneo['Precio_inscripcion'] ?></span>
+                                </p>
+                            </div>
+			
+						
 				</div>
 
 				<button aria-label="Siguiente" class="carousel__siguiente">
