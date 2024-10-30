@@ -43,10 +43,13 @@ body {
   transition: transform 0.2s; /* Transición suave para hover */
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.812); /* Sombra suave */
 }
+.card-list .card-item .card-link:hover {
+  border-color: green;
+}
 
 .card-link:hover {
   transform: translateY(-5px); /* Efecto de elevación al pasar el ratón */
-  border-color: green;
+ 
 }
 
 .card-image {
