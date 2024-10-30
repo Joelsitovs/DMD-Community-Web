@@ -12,11 +12,11 @@ body {
   background: white;
 }
 
-.card-list .card-item{
+.card-list .card-item {
   list-style: none;
 }
 
-.card-list .card-item .card-link{
+.card-list .card-item .card-link {
   width: 400px;
   display: block;
   background: #fff;
@@ -28,43 +28,32 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.card-list .card-link .card-image{
+.card-list .card-link .card-image {
   width: 100%;
   object-fit: cover;
   border-radius: 8px;
 }
-
+.card-list .card-link .card-title{
+  color :blue;
+  padding: 8px 16px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 16px 0 18px;
+  background-color: aliceblue;
+}
 .card-list .card-item .card-link:hover {
   border-color: rgb(244, 251, 38);
   transform: translateY(-5px); /* Efecto de elevación al pasar el ratón */
- 
-}
-
-
-
-.card-title {
-  font-size: 1.5rem; /* Tamaño de fuente para el título */
-  margin: 10px 0; /* Espaciado vertical */
-}
-
-.card-text {
-  color: red; /* Color del texto */
-  padding: 8px 16px;
-  margin: 16px 0 18px;
-  font-size: 0.95rem;
-  font-weight: 500;
-  background-color: aliceblue;
-  border-radius: 50px;
 }
 
 .card-button {
- height: 30px;
- width: 30px;
- border-radius: 50%;
- margin: 30px;
- border: 2px solid #3bc4f2;
- cursor: pointer;
-
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin: 30px;
+  border: 2px solid #3bc4f2;
+  cursor: pointer;
 }
 .card-list .card-link:hover .card-button {
   background-color: #3bc4f2;
