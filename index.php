@@ -24,7 +24,7 @@ while ($row = $resultado->fetch_assoc()) {
 <body>
     <div class="container">
         <div class="card-wrapper">
-            <ul class="card-list">
+            <ul class="card-list swiper-wrapper">
                 <?php foreach ($torneos as $row) { ?>
                 <li class="card-item swiper-slide">
                     <a href="#" class="card-link">
