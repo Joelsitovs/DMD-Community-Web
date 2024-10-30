@@ -22,7 +22,7 @@ while ($row = $resultado->fetch_assoc()) {
 </head>
 
 <body>
-    <div class="container">
+    <div class="container swiper">
         <div class="card-wrapper">
             <ul class="card-list swiper-wrapper">
                 <?php foreach ($torneos as $row) { ?>
