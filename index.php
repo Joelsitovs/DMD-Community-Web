@@ -27,8 +27,8 @@ while ($row = $resultado->fetch_assoc()) {
             <ul class="card list">
                 <?php foreach ($torneos as $row) { ?>
                 <li class="card-item">
-                    <a href=" <?php echo htmlspecialchars($row['imagen']);?> " class="card-link">
-                        <img src="" alt="" class="card-image">
+                    <a href=" " class="card-link">
+                        <img src="<?php echo htmlspecialchars($row['imagen']);?> " alt="" class="card-image">
                         <p class="badge">Torneo</p>
                         <h2 class="card-title">Torneo de Fortnite</h2>
                         <p class="card-text">Fecha de inicio: 12/12/2020</p>
