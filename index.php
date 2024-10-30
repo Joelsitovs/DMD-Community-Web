@@ -31,9 +31,8 @@ while ($row = $resultado->fetch_assoc()) {
                         <p class="badge">Torneo</p>
                         <h2 class="card-title">Torneo de Fortnite</h2>
                         <p class="card-text">Fecha de inicio: 12/12/2020</p>
-                        <span class="material-symbols-outlined">
-                            arrow_forward
-                        </span>
+                        <button class="card-button
+                        material-symbols-outlined"> arrow_forward</button>
                     </a>
                 </li>
             </ul>
