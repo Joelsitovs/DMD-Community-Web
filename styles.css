@@ -158,14 +158,10 @@ body {
   /* Asegura que el contenedor tiene el ancho correcto */
 }
 
-/* Tarjetas de torneos */
-
-.glide__slide .torneo-card .torneo-img {
-  width: 100%; /* Cambia esto al tamaño deseado */
-  height: auto;
-  object-fit: cover; /* Asegúrate de que la imagen se recorte correctamente */
+.torneo-img{
+  width: 10px;
+  height: 10px;
 }
-
 
 .torneo-card-brawl-stars::before {
   content: "";
