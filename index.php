@@ -23,11 +23,12 @@ while ($row = $resultado->fetch_assoc()) {
 
 <body>
     <div class="container">
-        <div class="card-wrapper">
+        <div class="card-wrapper">z
             <ul class="card list">
+                <?php foreach ($torneos as $row) { ?>
                 <li class="card-item">
-                    <a href="#" class="card-link">
-                        <img src="" alt="" class="">
+                    <a href=" <?php echo htmlspecialchars($row['imagen']);?> " class="card-link">
+                        <img src="" alt="" class="card-image">
                         <p class="badge">Torneo</p>
                         <h2 class="card-title">Torneo de Fortnite</h2>
                         <p class="card-text">Fecha de inicio: 12/12/2020</p>
@@ -35,6 +36,7 @@ while ($row = $resultado->fetch_assoc()) {
                         material-symbols-outlined"> arrow_forward</button>
                     </a>
                 </li>
+                <?php } ?>
             </ul>
         </div>
     </div>
