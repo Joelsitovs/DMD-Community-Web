@@ -118,7 +118,10 @@ body {
 .section-torneo{
   padding: 30px 20px;
   margin: 20px 0;
-  background: red;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   /* Fondo blanco */
   border-radius: 10px;
   box-shadow: 0 26px 58px 0 rgba(0, 0, 0, 0.22),
