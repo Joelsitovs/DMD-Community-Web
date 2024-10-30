@@ -161,11 +161,11 @@ body {
 /* Tarjetas de torneos */
 
 
-.torneo-img {
-  width: 10px; /* Ajusta el ancho deseado */
-  height: 10px; /* Mantiene la proporción */
-  object-fit: cover;
+.torneo-card .torneo-img {
+  width: 150px !important;
+  height: auto !important;
 }
+
 .torneo-card {
   position: relative;
   min-width: 300px;
