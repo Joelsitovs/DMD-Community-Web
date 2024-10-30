@@ -1,7 +1,7 @@
 <?php
 include 'conexion.php';
 
-$consulta = "SELECT nombre, fecha_inicio, Premio, Precio_inscripcion, imagen FROM torneos Limit 1";
+$consulta = "SELECT nombre, fecha_inicio, Premio, Precio_inscripcion, imagen FROM torneos";
 $resultado = $conexion->query($consulta);
 
 $torneos = [];
