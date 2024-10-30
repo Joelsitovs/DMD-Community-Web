@@ -179,7 +179,7 @@ body {
   z-index: 1;
 }
 
-.torneo-card img {
+.torneo-img {
   width: 100px; /* Ajusta el ancho deseado */
   height: auto; /* Mantiene la proporción */
 }
