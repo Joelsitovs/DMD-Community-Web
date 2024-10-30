@@ -12,8 +12,13 @@ body {
   background: white; /* O usa un degradado si prefieres */
 }
 .container {
-  width: 100%; /* Para que ocupe el ancho completo */
-  padding: 20px; /* Espaciado alrededor de la tarjeta */
+display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
 }
 .card-list .card-item {
   list-style: none;
