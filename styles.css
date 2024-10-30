@@ -160,6 +160,12 @@ body {
 
 /* Tarjetas de torneos */
 
+
+.torneo-img {
+  width: 10px; /* Ajusta el ancho deseado */
+  height: 10px; /* Mantiene la proporción */
+  object-fit: cover;
+}
 .torneo-card {
   position: relative;
   min-width: 300px;
@@ -179,11 +185,6 @@ body {
   z-index: 1;
 }
 
-.torneo-img {
-  width: 10px; /* Ajusta el ancho deseado */
-  height: 10px; /* Mantiene la proporción */
-  object-fit: cover;
-}
 
 
 .torneo-card-brawl-stars::before {
