@@ -41,6 +41,8 @@ body {
   text-align: center;
   margin: 16px 0 18px;
   background-color: aliceblue;
+  width: fit-content;
+  border-radius: 50px;
 }
 .card-list .card-item .card-link:hover {
   border-color: rgb(244, 251, 38);
