@@ -124,8 +124,7 @@ body {
   align-items: center;
   /* Fondo blanco */
   border-radius: 10px;
-  box-shadow: 0 26px 58px 0 rgba(0, 0, 0, 0.22),
-      0 5px 14px 0 rgba(0, 0, 0, 0.18);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
 }
 .header-section {
   display: flex;
