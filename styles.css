@@ -168,17 +168,7 @@ body {
   box-sizing: content-box !important; /* Asegura que este estilo prevalezca */
 }
 
-.torneo-card {
-display: flex;
-}
 
-.torneo-card h3,
-.torneo-card p,
-.torneo-card button {
-  position: relative;
-  z-index: 1;
-  color: red;
-}
 
 
 
