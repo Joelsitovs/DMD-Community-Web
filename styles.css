@@ -9,7 +9,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh; /* Asegúrate de que el cuerpo ocupe toda la altura */
-  background: white;
+  background: white; /* O usa un degradado si prefieres */
 }
 
 .card-list .card-item {
@@ -33,31 +33,39 @@ body {
   object-fit: cover;
   border-radius: 8px;
 }
-.card-list .card-link .card-title{
-  color :blue;
+
+.card-list .card-link .card-title {
+  color: blue;
   padding: 8px 16px;
   font-size: 1.5rem;
   font-weight: 600;
   text-align: center;
   margin: 16px 0 18px;
-  background-color: aliceblue;
+  background-color: aliceblue; /* Considera un color que contraste */
   width: fit-content;
   border-radius: 50px;
 }
+
 .card-list .card-item .card-link:hover {
   border-color: rgb(244, 251, 38);
   transform: translateY(-5px); /* Efecto de elevación al pasar el ratón */
 }
 
 .card-button {
-  height: 30px;
-  width: 30px;
+  height: 40px; /* Aumentado para mejor visibilidad */
+  width: 40px; /* Aumentado para mejor visibilidad */
   border-radius: 50%;
-  margin: 30px;
+  display: flex; /* Usar flex para centrar */
+  align-items: center; /* Centrar el icono verticalmente */
+  justify-content: center; /* Centrar el icono horizontalmente */
+  margin: 30px auto; /* Centrar el botón horizontalmente */
   border: 2px solid #3bc4f2;
   cursor: pointer;
+  background-color: transparent; /* Fondo transparente por defecto */
+  transition: background-color 0.3s ease; /* Transición suave */
 }
+
 .card-list .card-link:hover .card-button {
   background-color: #3bc4f2;
-  color: white;
+  color: white; /* Asegúrate de que el icono se vea bien */
 }
