@@ -9,7 +9,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh; /* Asegúrate de que el cuerpo ocupe toda la altura */
-  background: linear-gradient(90deg, #89a5c4 0%, #8db7da 50%, #6c91ad 100%);
+  background: white;
 }
 
 .container {
