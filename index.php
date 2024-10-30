@@ -22,6 +22,10 @@ while ($row = $resultado->fetch_assoc()) {
 
     <!-- Estilos CSS -->
     <link rel="stylesheet" href="./styles.css">
+    <script
+    src="https://example.com/fontawesome/vVERSION/js/all.js"
+    data-auto-a11y="true"
+  ></script>
 </head>
 <body>
     <!-- Encabezado -->
