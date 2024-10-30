@@ -167,7 +167,12 @@ body {
   object-fit: cover;
   box-sizing: content-box !important; /* Asegura que este estilo prevalezca */
 }
-
+.glide img{
+  width: 100% !important;
+  height: auto !important;
+  object-fit: cover;
+  box-sizing: content-box !important; /* Asegura que este estilo prevalezca */
+}
 
 
 
