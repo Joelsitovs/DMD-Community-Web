@@ -45,7 +45,7 @@ body {
   border: 2px solid transparent; /* Borde transparente */
 }
 .card-list .card-item .card-link:hover {
-  border-color: green;
+  border-color: rgb(38, 187, 251);
   transform: translateY(-5px); /* Efecto de elevación al pasar el ratón */
  
 }
