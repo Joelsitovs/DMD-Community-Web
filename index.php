@@ -43,18 +43,16 @@ while ($row = $resultado->fetch_assoc()) {
 				</button>
 
 				<div class="carousel__lista">
-                    <?php foreach ($torneos as $torneo): ?>
-                        <div class="carousel__elemento">
-                            <img src="img/<?= $torneo['imagen'] ?>" alt="<?= $torneo['nombre'] ?>" class="carousel__imagen">
-                            <div class="carousel__informacion">
-                                <h3 class="carousel__titulo"><?= $torneo['nombre'] ?></h3>
-                                <p class="carousel__descripcion">
-                                    <span class="carousel__fecha"><?= $torneo['fecha_inicio'] ?></span>
-                                    <span class="carousel__premio"><?= $torneo['Premio'] ?></span>
-                                    <span class="carousel__precio"><?= $torneo['Precio_inscripcion'] ?></span>
-                                </p>
-                            </div>
-			
+                    <?php foreach ($torneos as $row) ?>
+                    <div class="carousel__elemento">
+                        <img src="<?php echo $row['imagen'] ?>" alt="Imagen de torneo" class="carousel__imagen">
+                        <div class="carousel__informacion">
+                            <h3 class="carousel__titulo"><?php echo $row['nombre'] ?></h3>
+                            <p class="carousel__descripcion">
+                                <span class="carousel__fecha">Fecha de inicio: <?php echo $row['fecha_inicio'] ?></span>
+                                <span class="carousel__premio">Premio: <?php echo $row['Premio'] ?></span>
+                                <span class="carousel__precio">Precio de inscripción: <?php echo $row['Precio_inscripcion'] ?></span>
+                            </p>
 						
 				</div>
 
