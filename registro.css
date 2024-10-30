@@ -108,13 +108,14 @@ top: -10px;
 left: 20px;
 font-size: 14px;
 background: #000;
-color: #f1c40f;
+color: #ffffff;
 padding: 0 10px;
 border-radius: 10px;
 }
 .input-field:focus ,
 .input-field:valid{
-    border: 1px solid #f1c40f;
+    border: 4px solid white; /* Cambia el color del borde al enfocar */
+    color: rgb(255, 255, 255);
 }
 
 .icon{
@@ -151,3 +152,16 @@ border-radius: 10px;
         padding: 7.5em 1.5em 4em 1.5em;
     }
 }
+
+  /* Estilos adicionales para el autocompletado en foco */
+  input:-webkit-autofill:focus {
+    border: 4px solid white; /* Cambia el color del borde al enfocar */
+    color: rgb(255, 255, 255);
+
+  }
+
+    input:-webkit-autofill {
+        -webkit-text-fill-color: white; /* Cambia el color del texto */
+        border: 10px solid rgb(255, 255, 255); /* Cambia el color del borde */
+        -webkit-box-shadow: 0 0 0px 105px black inset; /* Cambia el color del fondo */
+    }
