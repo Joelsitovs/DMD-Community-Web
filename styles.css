@@ -45,12 +45,10 @@ body {
 }
 .card-list .card-item .card-link:hover {
   border-color: green;
-}
-
-.card-link:hover {
   transform: translateY(-5px); /* Efecto de elevación al pasar el ratón */
  
 }
+
 
 .card-image {
   width: 100%;
