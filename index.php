@@ -24,7 +24,7 @@ while ($row = $resultado->fetch_assoc()) {
 <body>
     <div class="container">
         <div class="card-wrapper">
-            <ul class="card list">
+            <ul class="card-list">
                 <?php foreach ($torneos as $row) { ?>
                 <li class="card-item">
                     <a href=" #" class="card-link">
