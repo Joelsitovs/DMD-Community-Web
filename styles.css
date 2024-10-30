@@ -8,10 +8,20 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 100vh;
+  min-height: 100vh; /* Cambiado de min-width a min-height */
   background: linear-gradient(90deg, #1e5799 0%, #2989d8 50%, #7db9e8 100%);
 }
-.card-list .card-item .card-link {
+
+.card-list {
+  list-style: none; /* Elimina los puntos de la lista */
+  padding: 0; /* Elimina el padding de la lista */
+}
+
+.card-item {
+  margin: 16px; /* Añadir márgenes entre las tarjetas */
+}
+
+.card-link {
   width: 400px;
   display: block;
   background: #fff;
@@ -19,16 +29,15 @@ body {
   border-radius: 12px;
   text-decoration: none;
 }
-.card-list .card-item .card-link a {
-  text-decoration: none;
-}
-.card-list .card-link .card-image {
+
+.card-image {
   width: 100%;
   height: 200px;
   object-fit: cover;
   border-radius: 8px;
 }
-.card-list .card-link .card-text {
+
+.card-text {
   color: red;
   padding: 8px 16px;
   margin: 16px 0;
