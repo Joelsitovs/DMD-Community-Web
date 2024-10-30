@@ -115,10 +115,10 @@ body {
   /* Texto negro al pasar el mouse */
 }
 /* Secciones */
-.section-torneos {
+.section-torneo{
   padding: 30px 20px;
   margin: 20px 0;
-  background: red;
+  background: white;
   /* Fondo blanco */
   border-radius: 10px;
   box-shadow: 0 26px 58px 0 rgba(0, 0, 0, 0.22),

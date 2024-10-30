@@ -38,7 +38,7 @@ while ($row = $resultado->fetch_assoc()) {
         </ul>
     </nav>
     <!-- Próximos Torneos -->
-    <section class="section">
+    <section class="section-torneo">
     <div class="container swiper">
         <div class="card-wrapper">
             <ul class="card-list swiper-wrapper">
