@@ -21,6 +21,7 @@ while ($row = $resultado->fetch_assoc()) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css">
     <!-- Glide.js JS -->
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
+    <!-- Estilos CSS -->
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
@@ -53,7 +54,9 @@ while ($row = $resultado->fetch_assoc()) {
                     <?php foreach($torneos as $row) { ?>
                     <li class="glide__slide">
                         <div class="torneo-card">
-                            <img src="<?php echo htmlspecialchars($row['imagen']); ?>" alt="<?php echo htmlspecialchars($row['nombre']); ?>" class="torneo-img">
+                        <img src="<?php echo htmlspecialchars($row['imagen']); ?>" 
+     alt="<?php echo htmlspecialchars($row['nombre']); ?>" 
+     style="width: 150px; height: auto; object-fit: cover; box-sizing: content-box;">
                             <h3><?php echo htmlspecialchars($row['nombre']); ?></h3>
                             <p><strong>Fecha:</strong> Próximamente...</p>
                             <p><strong>Premio:</strong> <?php echo htmlspecialchars($row['Premio']); ?> €</p>
