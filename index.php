@@ -263,6 +263,7 @@ while ($row = $resultado->fetch_assoc()) {
     <!-- Resto del contenido... -->
     
     <!-- Enlace JavaScript (Scripts) --> 
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.9/glider.min.js"></script>
     <script src="./scripts.js"></script>
 </body>
