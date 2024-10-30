@@ -160,12 +160,11 @@ body {
 
 /* Tarjetas de torneos */
 
-#glide .glide__slides .glide__slide .torneo-card .torneo-img {
-  width: 100px !important; /* Cambia a tu tamaño deseado */
-  height: auto !important;
-  object-fit: cover !important;
+section .glide .glide__slides .glide__slide .torneo-card .torneo-img {
+  width: 100px;
+  height: auto;
+  object-fit: cover;
 }
-
 
 
 .torneo-card-brawl-stars::before {
