@@ -24,9 +24,9 @@ while ($row = $resultado->fetch_assoc()) {
 <body>
     <div class="container">
         <div class="card-wrapper">
-            <ul class="card-list swiper-wrapper">
+            <ul class="card-list">
                 <?php foreach ($torneos as $row) { ?>
-                <li class="card-item swiper-slide">
+                <li class="card-item">
                     <a href="#" class="card-link">
                         <img src="<?php echo ($row['imagen']);?> " alt="" class="card-image">
                         <h2 class="card-title"><?php echo ($row['nombre']);  ?></h2>
