@@ -167,15 +167,7 @@ body {
 }
 
 .torneo-card {
-  position: relative;
-  min-width: 300px;
-  margin: 15px;
-  padding: 20px;
-  border-radius: 10px;
-  transition: transform 0.3s, box-shadow 0.3s;
-  background: #fff;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+display: flex;
 }
 
 .torneo-card h3,
