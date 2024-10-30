@@ -160,8 +160,8 @@ body {
 
 /* Tarjetas de torneos */
 
-.custom-img {
-  width: 100px; /* Cambia a tu tamaño deseado */
+.glide__slide .torneo-card .torneo-img {
+  width: 100%; /* Cambia esto al tamaño deseado */
   height: auto;
   object-fit: cover; /* Asegúrate de que la imagen se recorte correctamente */
 }
