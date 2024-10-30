@@ -77,3 +77,30 @@ transform: rotate(-45deg);
   background: #5372F0;
 
 }
+.card-wrapper .swiper-pagination-bullet{
+  height: 13px;
+  width: 13px;
+  opacity: 0.5;
+  background: #5372F0;
+}
+
+.card-wrapper .swiper-pagination-bullet-active{
+
+  opacity: 1;
+}
+.card-wrapper .swiper-slide-button{
+  color: #5372F0;
+  margin-top: -35px;
+}
+
+@media screen and (max-width: 768px){
+  .card-wrapper{
+    margin: 0 20px 35px;
+  }
+  .card-wrapper .swiper-slide-button{
+    display: none;
+  }
+  
+  
+  
+}
