@@ -181,7 +181,7 @@ body {
 
 .torneo-card img{
   width: 100px;
-  height: 100px;
+  height: 10px;
 }
 
 .torneo-card-brawl-stars::before {
