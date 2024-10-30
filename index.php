@@ -52,37 +52,23 @@ while ($row = $resultado->fetch_assoc()) {
             <div class="carousel__contenedor">
                 <button aria-label="Anterior" class="carousel__anterior">
                     <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="carousel__lista">
+                    <div class="carousel__elemento">
+                    <img src="<?php echo htmlspecialchars($row['imagen']); ?>" alt="<?php echo htmlspecialchars($row['nombre']); ?>" class="torneo-img">
+
+
+                    </div>
+                </div>
+
+
+
+                <button aria-label="Siguiente" class="carousel__siguiente">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
 
             </div>
-            <div class="glide__track" data-glide-el="track">
-                <ul class="glide__slides">
-                    <?php foreach($torneos as $row) { ?>
-                    <li class="glide__slide">
-                        <div class="torneo-card">
-                        <img src="<?php echo htmlspecialchars($row['imagen']); ?>" alt="<?php echo htmlspecialchars($row['nombre']); ?>" class="torneo-img">
-                        <h3><?php echo htmlspecialchars($row['nombre']); ?></h3>
-                            <p><strong>Fecha:</strong> Próximamente...</p>
-                            <p><strong>Premio:</strong> <?php echo htmlspecialchars($row['Premio']); ?> €</p>
-                            <p><strong>Precio de Inscripción:</strong> <?php echo htmlspecialchars($row['Precio_inscripcion']); ?> €</p>
-                            <button>Inscribirse</button>
-                        </div>
-                    </li>
-                    <?php } ?>
-                </ul>
-                <div class="glide__arrows" data-glide-el="controls">
-                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
-                        <span>&lt;</span>
-                    </button>
-                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
-                        <span>&gt;</span>
-                    </button>
-                </div>
-                <div class="glide__bullets" data-glide-el="controls[nav]">
-                    <?php foreach($torneos as $i => $row) { ?>
-                        <button class="glide__bullet" data-glide-dir="=<?php echo $i; ?>"></button>
-                    <?php } ?>
-                </div>
-            </div>
+           
         </div>
     </section>
     <section id="juegos" class="section juegos-section">
