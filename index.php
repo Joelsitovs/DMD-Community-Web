@@ -17,7 +17,7 @@ while ($row = $resultado->fetch_assoc()) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_forward" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <!--   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/> --> 
     <link rel="stylesheet" href="./styles.css">
 </head>
 
@@ -44,7 +44,7 @@ while ($row = $resultado->fetch_assoc()) {
             <div class="swiper-button-next"></div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!--   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> --> 
      <!--  <script src="scripts.js"></script>-->
 </body>
 
