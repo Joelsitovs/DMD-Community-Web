@@ -183,6 +183,10 @@ body {
   width: 100px;
   height: 10px;
 }
+.brawl-Stars{
+  width: 100px;
+  height: 10px;
+}
 
 .torneo-card-brawl-stars::before {
   content: "";
