@@ -73,6 +73,7 @@ while ($row = $resultado->fetch_assoc()) {
                 </button>
 
             </div>
+            <div role="tablist" class="carousel__indicadores"></div>
            
         </div>
     </section>
