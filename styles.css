@@ -1,33 +1,40 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
+body {
   display: flex;
   align-items: center;
   justify-content: center;
   min-width: 100vh;
   background: linear-gradient(90deg, #1e5799 0%, #2989d8 50%, #7db9e8 100%);
 }
-.card-list .card-item .card-link{
+.card-list .card-item .card-link {
   width: 400px;
   display: block;
-  background-color: white;
+  background: #fff;
   padding: 18px;
   border-radius: 12px;
   text-decoration: none;
 }
-.card-list .card-item .card-link a{
+.card-list .card-item .card-link a {
   text-decoration: none;
 }
-.card-list .card-link .card-image{
+.card-list .card-link .card-image {
   width: 100%;
   aspect-ratio: 16/9;
   object-fit: cover;
   border-radius: 8px;
 }
-.card-list .card-link .card-text{
-  color: black;
+.card-list .card-link .card-text {
+  color: red;
+  padding: 8px 16px;
+  margin: 16px 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  background-color: aliceblue;
+  width: fit-content;
+  border-radius: 10px;
 }
