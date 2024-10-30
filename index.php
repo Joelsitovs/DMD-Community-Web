@@ -23,19 +23,6 @@ while ($row = $resultado->fetch_assoc()) {
 </head>
 <body>
 	<div class="contenedor">
-		<main class="contenido-principal">
-			<img src="img/1.png" alt="Dome of the German Bundestag" class="contenido-principal__imagen">
-			<div class="contenido-principal__contenedor">
-				<h1 class="contenido-principal__titulo">Dome of the German Bundestag</h1>
-				<p class="contenido-principal__resumen">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a commodo orci. Nulla ipsum ante, auctor a odio id, bibendum accumsan mauris.
-				</p>
-				<p class="contenido-principal__resumen">
-					Fusce malesuada mollis ante, at elementum mi maximus nec. Praesent volutpat, tortor sed condimentum sagittis, mi diam fringilla nibh.
-				</p>
-			</div>
-		</main>
-
 		<div class="carousel">
 			<div class="carousel__contenedor">
 				<button aria-label="Anterior" class="carousel__anterior">
