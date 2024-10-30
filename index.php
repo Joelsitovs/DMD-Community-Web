@@ -19,7 +19,7 @@ while ($row = $resultado->fetch_assoc()) {
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet"> 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.css">
-	<link rel="stylesheet" href="css/estilos.css">
+	<link rel="stylesheet" href="./styles.css">
 </head>
 <body>
 	<div class="contenedor">
