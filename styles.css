@@ -182,6 +182,7 @@ body {
 .torneo-img {
   width: 10px; /* Ajusta el ancho deseado */
   height: 10px; /* Mantiene la proporción */
+  object-fit: cover;
 }
 
 
