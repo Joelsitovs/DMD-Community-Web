@@ -19,6 +19,9 @@ body{
   border-radius: 12px;
   text-decoration: none;
 }
+.card-list .card-item .card-link a{
+  text-decoration: none;
+}
 .card-list .card-link .card-image{
   width: 100%;
   aspect-ratio: 16/9;
