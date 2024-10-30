@@ -179,14 +179,11 @@ body {
   z-index: 1;
 }
 
-.torneo-card img{
-  width: 100px;
-  height: 10px;
+.torneo-card img {
+  width: 100px; /* Ajusta el ancho deseado */
+  height: auto; /* Mantiene la proporción */
 }
-.brawl-Stars{
-  width: 100px;
-  height: 10px;
-}
+
 
 .torneo-card-brawl-stars::before {
   content: "";
