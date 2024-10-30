@@ -26,7 +26,7 @@ body {
   list-style: none; /* Elimina los puntos de la lista */
   padding: 0; /* Elimina el padding de la lista */
   display: flex; /* Para mostrar las tarjetas en fila */
-  flex-wrap: wrap; /* Permite que las tarjetas se ajusten en múltiples filas */
+  flex-wrap: row; /* Permite que las tarjetas se ajusten en múltiples filas */
   gap: 20px; /* Espacio entre las tarjetas */
 }
 
