@@ -12,15 +12,6 @@ body {
   background: white;
 }
 
-.container {
-  width: 100%; /* Para que ocupe el ancho completo */
-  padding: 20px; /* Espaciado alrededor de la tarjeta */
-}
-
-.card-wrapper {
-  display: flex;
-  justify-content: center; /* Centra las tarjetas dentro del contenedor */
-}
 
 .card-list {
   list-style: none; /* Elimina los puntos de la lista */
