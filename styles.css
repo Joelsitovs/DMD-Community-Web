@@ -30,8 +30,9 @@ user-select: none;
 
 .card-list .card-link .card-image {
   width: 100%;
+  aspect-ratio: 16/9; /* Relación de aspecto 16:9 */
   object-fit: cover;
-  height: 200px;
+  
   border-radius: 8px;
 }
 
