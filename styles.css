@@ -167,14 +167,12 @@ body {
   object-fit: cover;
   box-sizing: content-box !important; /* Asegura que este estilo prevalezca */
 }
-.glide img{
-  width: 100% !important;
-  height: auto !important;
+img.torneo-img {
+  width: 150px;
+  height: auto;
   object-fit: cover;
-  box-sizing: content-box !important; /* Asegura que este estilo prevalezca */
+  box-sizing: content-box;
 }
-
-
 
 
 .torneo-card-brawl-stars::before {
