@@ -27,3 +27,7 @@ new Swiper('.card-wrapper', {
     }
     
   });
+
+window.onload = function() {
+    window.location.reload(true);
+};
