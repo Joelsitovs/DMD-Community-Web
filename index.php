@@ -17,10 +17,8 @@ while ($row = $resultado->fetch_assoc()) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DMD Community</title>
     <!-- Glide.js CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.9/glider.min.css">
     <!-- Glide.js JS -->
-    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
     <!-- Estilos CSS -->
     <link rel="stylesheet" href="./styles.css">
 </head>
@@ -264,7 +262,7 @@ while ($row = $resultado->fetch_assoc()) {
     <!-- Resto del contenido... -->
     
     <!-- Enlace JavaScript (Scripts) --> 
-     
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.9/glider.min.js"></script>
     <script src="./scripts.js"></script>
 </body>
 </html>
