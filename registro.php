@@ -6,7 +6,7 @@
     <title>Registro</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     
-    <link rel="stylesheet" href="registro.css">
+    <link rel="stylesheet" href="registro.css?v=<?php echo time(); ?>">
 </head>
 <body>
   <div class="wrapper">
