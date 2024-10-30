@@ -9,7 +9,7 @@ while ($row = $resultado->fetch_assoc()) {
     $torneos[] = $row;
 }
 
-$consulta2 = "SELECT nombre,enlace,icono FROM redessociales Limit 2";
+$consulta2 = "SELECT nombre,enlace,icono FROM redessociales";
 $resultado2 = $conexion->query($consulta2);
 
 $redes = [];
@@ -224,7 +224,6 @@ while ($row = $resultado2->fetch_assoc()) {
                 <img src="<?php echo $row['icono']; ?>" alt="<?php echo $row['nombre']; ?>" class="social-icon">
             </a>
         <?php } ?>
-        
     </div>
 </footer>
 
