@@ -29,9 +29,9 @@ while ($row = $resultado->fetch_assoc()) {
                     <a href="#" class="card-link">
                         <img src="<?php echo ($row['imagen']);?> " alt="" class="card-image">
                         <h2 class="card-title"><?php echo ($row['nombre']);  ?></h2>
-                        <p class="card-text">Fecha de inicio: 12/12/2020</p>
-                        <p class="card-text">Premio</p>
-                        <p class="card-text">Precio de inscripción: $100</p>
+                        <p class="card-text">Fecha de inicio: <?php echo ($row['fecha_inicio']);?></p>
+                        <p class="card-text">Premio: <?php echo ($row['Premio']);?></p>
+                        <p class="card-text">Precio de inscripción: $<?php echo ($row['Precio_inscripcion']);?></p>
                         <button class="card-button
                         material-symbols-outlined"> arrow_forward</button>
                     </a>
