@@ -16,7 +16,7 @@ body {
   list-style: none;
 }
 .card-list .card-item .card-link {
-  width: 400px;
+  user-select: none;;
   display: block;
   background-color: #fff;
   padding: 18px;
@@ -67,5 +67,5 @@ transform: rotate(-45deg);
 .card-list .card-link:hover .card-button{
   color: #fff;
   background: #5372F0;
-  
+
 }
