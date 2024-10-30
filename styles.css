@@ -11,7 +11,10 @@ body {
   min-height: 100vh; /* Asegúrate de que el cuerpo ocupe toda la altura */
   background: white; /* O usa un degradado si prefieres */
 }
-
+.container {
+  width: 100%; /* Para que ocupe el ancho completo */
+  padding: 20px; /* Espaciado alrededor de la tarjeta */
+}
 .card-list .card-item {
   list-style: none;
 }
@@ -32,7 +35,6 @@ user-select: none;
   width: 100%;
   aspect-ratio: 16/9; /* Relación de aspecto 16:9 */
   object-fit: cover;
-  
   border-radius: 8px;
 }
 
