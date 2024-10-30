@@ -42,6 +42,7 @@ body {
   text-decoration: none;
   transition: transform 0.2s; /* Transición suave para hover */
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.812); /* Sombra suave */
+  border: 2px solid transparent; /* Borde transparente */
 }
 .card-list .card-item .card-link:hover {
   border-color: green;
