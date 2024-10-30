@@ -39,6 +39,85 @@ body {
   overflow: hidden;
   /* Oculta cualquier desbordamiento */
 }
+/* Capa de fondo semi-transparente */
+.overlay {
+  position: absolute;
+  /* Posiciona la capa en el mismo lugar que el header */
+  top: 0;
+  /* Empieza en la parte superior */
+  left: 0;
+  /* Empieza en la parte izquierda */
+  right: 0;
+  /* Se extiende hasta la derecha */
+  bottom: 0;
+  /* Se extiende hasta el fondo */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Color negro semi-transparente */
+  z-index: 1;
+  /* Coloca la superposición sobre la imagen de fondo */
+}
+
+/* Sombreado en el texto */
+.header h1 {
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8);
+  /* Sombra más pronunciada */
+  position: relative;
+  /* Posiciona el texto sobre la superposición */
+  z-index: 2;
+  /* Asegúrate de que el texto esté encima */
+}
+
+.header p {
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8);
+  /* Sombra más pronunciada para el párrafo */
+  position: relative;
+  /* Posiciona el texto sobre la superposición */
+  z-index: 2;
+  /* Asegúrate de que el texto esté encima */
+}
+
+/* Estilo para el contenido principal */
+.content {
+  padding: 20px;
+}
+
+
+/* Navegación */
+.navbar {
+  background: black;
+  /* Fondo negro */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+}
+
+.nav-menu li {
+  margin: 0 20px;
+}
+
+.nav-menu a {
+  color: white;
+  /* Texto amarillo */
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-menu a:hover {
+  background-color: #ffb700;
+  /* Fondo amarillo al pasar el mouse */
+  color: black;
+  /* Texto negro al pasar el mouse */
+}
+
+
 .card-wrapper{
   max-width: 1100px;
   
