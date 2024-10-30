@@ -35,6 +35,10 @@ body {
   transition: 0.3s ease;
 
 }
+.card-list .card-item .card-link:active {
+  cursor: grabbing;
+
+}
 .card-list .card-item .card-link:hover {
  border-color: #5372F0;
 }
