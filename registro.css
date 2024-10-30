@@ -112,7 +112,7 @@ a:hover{
 .input-field:focus ~ .label,
 .input-field:valid ~ .label{
 position: absolute;
-top: -10px;
+top: -7px;
 left: 20px;
 font-size: 14px;
 font-weight: 600;
@@ -120,12 +120,14 @@ background: #ffffff;
 color: #000000;
 padding: 0 10px;
 border-radius: 10px;
+box-shadow: 0 0 1px 1px rgba(13, 13, 13, 0.774);
 }
 .input-field:focus ,
 .input-field:valid{
     border: 2px solid rgb(10, 10, 10); /* Cambia el color del borde al enfocar */
     color: rgb(0, 0, 0);
     background-color: white;
+    
 }
 
 .icon{
