@@ -7,6 +7,12 @@ body{
     background: black;
     font-family: 'Roboto', sans-serif;
     color: #fff;
+    background-image: url('https://images-ext-1.discordapp.net/external/E470W-a25yhMQQV3azuZqv4t_efbFuQdNCF0fW0AAHo/https/i.imgur.com/OFiO9Md.png?format=webp&quality=lossless&width=960&height=384');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
 }
 a{
     text-decoration: none;
@@ -31,6 +37,8 @@ a:hover{
     border-radius: 15px;
     padding: 7.5em 2.5em 4em 2.5em;
     box-shadow: 0 0 10px 2px rgba(254, 254, 254, 0.306);
+    backdrop-filter: blur(50px);
+
 }
 .login-header{
     position: absolute;
@@ -114,8 +122,9 @@ border-radius: 10px;
 }
 .input-field:focus ,
 .input-field:valid{
-    border: 4px solid white; /* Cambia el color del borde al enfocar */
-    color: rgb(255, 255, 255);
+    border: 4px solid rgb(255, 255, 255); /* Cambia el color del borde al enfocar */
+    color: rgb(0, 0, 0);
+    background-color: white;
 }
 
 .icon{
@@ -155,13 +164,13 @@ border-radius: 10px;
 
   /* Estilos adicionales para el autocompletado en foco */
   input:-webkit-autofill:focus {
-    border: 4px solid white; /* Cambia el color del borde al enfocar */
-    color: rgb(255, 255, 255);
+    border: 4px solid rgb(255, 255, 255); /* Cambia el color del borde al enfocar */
+    color: rgb(0, 0, 0);
 
   }
 
     input:-webkit-autofill {
-        -webkit-text-fill-color: white; /* Cambia el color del texto */
+        -webkit-text-fill-color: rgb(0, 0, 0); /* Cambia el color del texto */
         border: 10px solid rgb(255, 255, 255); /* Cambia el color del borde */
-        -webkit-box-shadow: 0 0 0px 105px black inset; /* Cambia el color del fondo */
+        -webkit-box-shadow: 0 0 0px 105px white inset; /* Cambia el color del fondo */
     }
