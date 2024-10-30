@@ -39,5 +39,10 @@ body {
   margin: 16px 0 18px;
   background: #DDE4FF;
   width: fit-content;
-  border-radius: 50%;
+  border-radius: 50px;
+}
+.card-list .card-link .card-text{
+  font-size: 1rem;
+  color: #000;
+  font-weight: 400;
 }
