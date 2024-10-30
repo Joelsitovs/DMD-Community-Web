@@ -17,30 +17,30 @@ body {
   padding: 20px; /* Espaciado alrededor de la tarjeta */
 }
 
+.card-wrapper {
+  display: flex;
+  justify-content: center; /* Centra las tarjetas dentro del contenedor */
+}
 
-.card-list .card-item .card-link{
-  user-select: none;
+
+.card-item {
+  flex: 0 1 400px; /* Establece un ancho base de 400px, pero permite que se ajuste */
+}
+
+.card-link {
   display: block;
   background: #fff;
   padding: 18px;
   border-radius: 12px;
   text-decoration: none;
-  transition: 0.2s ease;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.812);
-  border: 2px solid transparent;
+  transition: transform 0.2s; /* Transición suave para hover */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.812); /* Sombra suave */
+  border: 2px solid transparent; /* Borde transparente */
 }
-
-
-
 .card-list .card-item .card-link:hover {
   border-color:#ffb700;
   transform: translateY(-5px); /* Efecto de elevación al pasar el ratón */
  
-}
-.card-list .card-link .card-image{
-  width: 100%;
-  object-fit: cover;
-  border-radius: 10px;
 }
 
 
