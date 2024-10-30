@@ -28,3 +28,6 @@ body{
   object-fit: cover;
   border-radius: 8px;
 }
+.card-list .card-link .card-text{
+  color: black;
+}
