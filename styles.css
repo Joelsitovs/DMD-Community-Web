@@ -17,10 +17,7 @@ body {
   padding: 20px; /* Espaciado alrededor de la tarjeta */
 }
 
-.card-wrapper {
-  display: flex;
-  justify-content: center; /* Centra las tarjetas dentro del contenedor */
-}
+
 .card-list .card-item .card-link{
   user-select: none;
   display: block;
@@ -33,15 +30,17 @@ body {
   border: 2px solid transparent;
 }
 
-.card-item {
-  flex: 0 1 400px; /* Establece un ancho base de 400px, pero permite que se ajuste */
-}
 
 
 .card-list .card-item .card-link:hover {
   border-color:#ffb700;
   transform: translateY(-5px); /* Efecto de elevación al pasar el ratón */
  
+}
+.card-list .card-link .card-image{
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 
