@@ -47,10 +47,11 @@ while ($row = $resultado->fetch_assoc()) {
         <div class="header-section">
             <h2>Próximos Torneos</h2>
         </div>
+        <div class="contenedor">
         <div class="carousel" >
             <div class="carousel__contenedor">
                 <button aria-label="Anterior" class="carousel__anterior">
-                    <i class="fas fa-chevron-left"></i>
+                    <i class="fa-solid fa-chevron-left"></i>
                 </button>
                 <div class="carousel__lista">
                 <?php foreach($torneos as $row) { ?>
@@ -68,12 +69,13 @@ while ($row = $resultado->fetch_assoc()) {
 
 
                 <button aria-label="Siguiente" class="carousel__siguiente">
-                    <i class="fas fa-chevron-right"></i>
+                    <i class="fa-sharp fa-regular fa-chevron-right"></i>
                 </button>
 
             </div>
             <div role="tablist" class="carousel__indicadores"></div>
            
+        </div>
         </div>
     </section>
     <section id="juegos" class="section juegos-section">
