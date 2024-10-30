@@ -205,7 +205,7 @@ transform: rotate(-45deg);
   height: 13px;
   width: 13px;
   opacity: 0.5;
-  background: #5372F0;
+  background: #ffb700;
 }
 
 .card-wrapper .swiper-pagination-bullet-active{
@@ -213,7 +213,7 @@ transform: rotate(-45deg);
   opacity: 1;
 }
 .card-wrapper .swiper-slide-button{
-  color: #5372F0;
+  color: #ffb700;
   margin-top: -35px;
 }
 
