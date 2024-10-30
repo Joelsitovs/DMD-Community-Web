@@ -4,14 +4,7 @@ include 'conexion.php';
 $consulta = "SELECT nombre, fecha_inicio, Premio, Precio_inscripcion, imagen FROM torneos LIMIT 1";
 $resultado = $conexion->query($consulta);
 
-$torneos = [];
-if ($resultado) {
-    while ($row = $resultado->fetch_assoc()) {
-        $torneos[] = $row;
-    }
-} else {
-    echo "Error en la consulta: " . $conexion->error; // Manejo de errores
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,23 +21,22 @@ if ($resultado) {
     <div class="container">
         <div class="card-wrapper">
             <ul class="card-list">
-                <?php if (!empty($torneos)): ?>
-                    <?php foreach ($torneos as $row): ?>
+                     <?php while ($row = $resultado->fetch_assoc()){ ?>
                         <li class="card-item">
                             <a href="#" class="card-link">
-                                <img src="<?php echo htmlspecialchars($row['imagen']); ?>" alt="<?php echo htmlspecialchars($row['nombre']); ?>" class="card-image">
-                                <h2 class="card-title"><?php echo htmlspecialchars($row['nombre']); ?></h2>
-                                <p class="card-text">Fecha de inicio: <?php echo htmlspecialchars($row['fecha_inicio']); ?></p>
-                                <p class="card-text">Premio: <?php echo htmlspecialchars($row['Premio']); ?></p>
-                                <p class="card-text">Precio de inscripción: $<?php echo htmlspecialchars($row['Precio_inscripcion']); ?></p>
+                                <img src="<?php echo $row ['imagen'] ?>" alt="" class="card-image">
+                                <h2 class="card-title"><?php echo $row ['nombre']?></h2>
+                                <p class="card-text">Fecha de inicio: <?php echo $row['fecha_inicio']?></p>
+                                <p class="card-text">Premio: <?php echo $row['Premio']?></p>
+                                <p class="card-text">Precio de inscripción: $<?php echo $row ['Precio_inscripcion'] ?></p>
                                 <button class="card-button material-symbols-outlined">arrow_forward</button>
                             </a>
-                        </li>
-                    <?php endforeach; ?>
-                <?php else: ?>
+                        </li> <?php } ?>
+     
+     
                     <li class="card-item">No se encontraron torneos.</li>
-                <?php endif; ?>
-            </ul>
+                   
+            </ul>   
         </div>
     </div>
 
