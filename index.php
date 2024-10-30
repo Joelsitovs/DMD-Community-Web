@@ -8,6 +8,14 @@ $torneos = [];
 while ($row = $resultado->fetch_assoc()) {
     $torneos[] = $row;
 }
+
+$consulta2 = "SELECT nombre,enlace,icono FROM redessociales";
+$resultado2 = $conexion->query($consulta2);
+
+$redes = [];
+while ($row = $resultado2->fetch_assoc()) {
+    $redes[] = $row;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -211,30 +219,12 @@ while ($row = $resultado->fetch_assoc()) {
 <footer class="footer">
     <p>&copy; 2024 DMD Community - Todos los derechos reservados.</p>
     <div class="social-media">
-        <a href="https://discord.gg/hUY4uZvEKR" target="_blank" class="social-link">
-            <img src="Assets/Images/Social Network/logo-discord.png" alt="Discord" class="social-icon">
-        </a>
-        <a href="https://www.twitch.tv/dmondejarm/" target="_blank" class="social-link">
-            <img src="Assets/Images/Social Network/logo-twitch.png" alt="Twitch" class="social-icon">
-        </a>
-        <a href="https://kick.com/dmondejarm" target="_blank" class="social-link">
-            <img src="Assets/Images/Social Network/logo-kick.png" alt="Kick" class="social-icon">
-        </a>
-        <a href="https://www.youtube.com/channel/UCUKvwQScM9aIWMVhpfLc0SQ" target="_blank" class="social-link">
-            <img src="Assets/Images/Social Network/logo-youtube.png" alt="YouTube" class="social-icon">
-        </a>
-        <a href="https://twitter.com/dmondejarm" target="_blank" class="social-link">
-            <img src="Assets/Images/Social Network/logo-x.png" alt="X" class="social-icon">
-        </a>
-        <a href="https://www.tiktok.com/@dmondejarm" target="_blank" class="social-link">
-            <img src="Assets/Images/Social Network/logo-tiktok.png" alt="TikTok" class="social-icon">
-        </a>
-        <a href="https://www.instagram.com/dmondejarm/?hl=es" target="_blank" class="social-link">
-            <img src="Assets/Images/Social Network/logo-instagram.png" alt="Instagram" class="social-icon">
-        </a>
-        <a href="https://es-es.facebook.com/diego.mondejar.96" target="_blank" class="social-link">
-            <img src="Assets/Images/Social Network/logo-facebook.png" alt="Facebook" class="social-icon">
-        </a>
+        <?php foreach ($redes as $row) { ?>
+            <a href="<?php echo $row['enlace']; ?>" target="_blank" class="social-link">
+                <img src="<?php echo $row['icono']; ?>" alt="<?php echo $row['nombre']; ?>" class="social-icon">
+            </a>
+        <?php } ?>
+        
     </div>
 </footer>
 
