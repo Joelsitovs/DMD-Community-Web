@@ -1,15 +1,30 @@
-document.addEventListener("DOMContentLoaded", function () {
-  new Glide("#glide", {
-    type: "carousel", // Tipo de carrusel
-    startAt: 0, // Comienza en el primer elemento
-    perView: 3, // Número de elementos visibles
-    breakpoints: {
-      800: {
-        perView: 1, // Muestra 1 elemento en pantallas pequeñas
-      },
-      1200: {
-        perView: 2, // Muestra 2 elementos en pantallas medianas
-      },
+new Swiper('.card-wrapper', {
+    loop: true,
+    spaceBetween: 30,
+  
+// Pagination bullets
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      dynamicBullets: true,
     },
-  }).mount();
-});
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+        0: {
+            slidesPerView: 1,
+        },
+        768: {
+            slidesPerView: 2,
+        },
+        1024: {
+            slidesPerView: 4,
+        },
+    }
+    
+  });
+
