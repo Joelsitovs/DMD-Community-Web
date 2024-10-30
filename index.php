@@ -53,12 +53,12 @@ while ($row = $resultado->fetch_assoc()) {
                     <?php foreach($torneos as $row) { ?>
                     <li class="glide__slide">
                         <div class="torneo-card">
-                            <img src="<?php echo htmlspecialchars($row['imagen']); ?>" alt="<?php echo htmlspecialchars($row['nombre']); ?>">
+                            <img src="<?php echo htmlspecialchars($row['imagen']); ?>" alt="<?php echo htmlspecialchars($row['nombre']); ?>"
                             <h3><?php echo htmlspecialchars($row['nombre']); ?></h3>
                             <p><strong>Fecha:</strong> Próximamente...</p>
                             <p><strong>Premio:</strong> <?php echo htmlspecialchars($row['Premio']); ?> €</p>
                             <p><strong>Precio de Inscripción:</strong> <?php echo htmlspecialchars($row['Precio_inscripcion']); ?> €</p>
-                            <button>Inscribirse</button>
+                            <button>Inscribirse</button>>
                         </div>
                     </li>
                     <?php } ?>
