@@ -54,15 +54,16 @@ while ($row = $resultado->fetch_assoc()) {
                     <i class="fas fa-chevron-left"></i>
                 </button>
                 <div class="carousel__lista">
+                <?php foreach($torneos as $row) { ?>
                     <div class="carousel__elemento">
                     <img src="<?php echo htmlspecialchars($row['imagen']); ?>" alt="<?php echo htmlspecialchars($row['nombre']); ?>" class="torneo-img">
-              
                             <h3><?php echo htmlspecialchars($row['nombre']); ?></h3>
                             <p><strong>Fecha:</strong> <?php echo htmlspecialchars($row['fecha_inicio']); ?></p>
                             <p><strong>Premio:</strong> <?php echo htmlspecialchars($row['Premio']); ?></p>
                             <p><strong>Precio de Inscripción:</strong> <?php echo htmlspecialchars($row['Precio_inscripcion']); ?></p>
                
                     </div>
+                    <?php } ?>
                 </div>
 
 
