@@ -17,6 +17,7 @@ body {
 }
 .card-list .card-item {
   list-style: none;
+  flex: 0 1 400px; 
 }
 
 .card-list .card-item .card-link {
