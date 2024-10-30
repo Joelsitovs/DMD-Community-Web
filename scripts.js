@@ -5,6 +5,8 @@ new Swiper('.card-wrapper', {
 // Pagination bullets
     pagination: {
       el: '.swiper-pagination',
+      clickable: true,
+      dynamicBullets: true,
     },
   
     // Navigation arrows
