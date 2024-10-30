@@ -48,7 +48,12 @@ while ($row = $resultado->fetch_assoc()) {
         <div class="header-section">
             <h2>Próximos Torneos</h2>
         </div>
-        <div class="glide" id="glide">
+        <div class="carousel" >
+            <div class="carousel__contenedor">
+                <button aria-label="Anterior" class="carousel__anterior">
+                    <i class="fas fa-chevron-left"></i>
+
+            </div>
             <div class="glide__track" data-glide-el="track">
                 <ul class="glide__slides">
                     <?php foreach($torneos as $row) { ?>
