@@ -12,6 +12,33 @@ body {
   background: #f1f1f1;
 
 }
+/* Encabezado */
+.header {
+  position: relative;
+  /* Necesario para la superposición */
+  background-image: url('https://images-ext-1.discordapp.net/external/E470W-a25yhMQQV3azuZqv4t_efbFuQdNCF0fW0AAHo/https/i.imgur.com/OFiO9Md.png?format=webp&quality=lossless&width=960&height=384');
+  /* Cambia esta URL por la imagen que desees */
+  background-size: cover;
+  /* Cubre todo el espacio del header */
+  background-position: center;
+  /* Centra la imagen */
+  height: 300px;
+  /* Altura del header */
+  color: white;
+  /* Color del texto */
+  display: flex;
+  /* Flexbox para alinear contenido */
+  flex-direction: column;
+  /* Coloca elementos en columna */
+  justify-content: center;
+  /* Centra verticalmente */
+  align-items: center;
+  /* Centra horizontalmente */
+  text-align: center;
+  /* Centra el texto */
+  overflow: hidden;
+  /* Oculta cualquier desbordamiento */
+}
 .card-wrapper{
   max-width: 1100px;
   
