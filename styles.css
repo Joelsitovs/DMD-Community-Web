@@ -116,6 +116,16 @@ body {
   color: black;
   /* Texto negro al pasar el mouse */
 }
+/* Secciones */
+.section {
+  padding: 30px 20px;
+  margin: 20px 0;
+  background: white;
+  /* Fondo blanco */
+  border-radius: 10px;
+  box-shadow: 0 26px 58px 0 rgba(0, 0, 0, 0.22),
+      0 5px 14px 0 rgba(0, 0, 0, 0.18);
+}
 
 
 .card-wrapper{
