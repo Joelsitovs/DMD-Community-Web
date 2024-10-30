@@ -16,8 +16,12 @@ body{
   display: block;
   background-color: white;
   padding: 18px;
+  border-radius: 12px;
+  text-decoration: none;
 }
 .card-list .card-link .card-image{
   width: 100%;
   aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: 8px;
 }
