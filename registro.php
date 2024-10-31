@@ -31,7 +31,7 @@
 
 
                 <div class="input_box">
-                    <input type="password" id="pass" class="input-field" required>
+                    <input type="password" id="confirm_pass" class="input-field" required>
                     <label for="confirm_pass" class="label">Confirm Password</label>
                     <i class="bx bx-lock-alt icon"></i>
                 </div>
