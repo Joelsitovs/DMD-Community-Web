@@ -1,6 +1,6 @@
 <?php
 // Incluir la conexión a la base de datos
-include './conexionusers.php';
+include 'conexionusers.php';
 // Función para validar entradas
 function validar_usuario($data) {
     return htmlspecialchars(stripslashes(trim($data)));
