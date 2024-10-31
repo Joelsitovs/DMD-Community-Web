@@ -93,6 +93,7 @@ function recibirdatos($conexion){
         redirigir_con_error('Por favor complete todos los campos');
     }
 
+    
 }
 // Recibir los datos del formulario
 recibirdatos($conexion);

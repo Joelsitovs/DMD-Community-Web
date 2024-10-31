@@ -27,7 +27,6 @@ function campos_requeridos($usuario, $contraseña, $contraseña_confirm) {
     return !empty($usuario) && !empty($contraseña) && !empty($contraseña_confirm);
 }
 
-
 // Función para verificar si el usuario ya existe en la base de datos
 function usuario_existente($conexion, $usuario) {
     // Preparar la consulta SQL
