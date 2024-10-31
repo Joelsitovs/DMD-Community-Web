@@ -1,5 +1,5 @@
 <?php
-$host = 'localhost';
+$host = '193.203.168.81';
 $dbname = 'u328800997_Dmondejarm';
 $user = 'u328800997_rootDmondejarm';
 $pass = 'F5^Z#rU1u&h';
