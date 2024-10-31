@@ -31,7 +31,7 @@ function redirigir_con_exito($mensaje){
 // Funcion para verificar si el usuario ya existe en la base de datos
 function usuario_existente($conexion,$usuario){
     // Preparar la consulta SQL
-    $sql = "Select * from users where usuario = ?";
+    $sql = "SELECT * FROM users WHERE usuario = ?";
     $stmt = $conexion->prepare($sql);
     // Verificar si la preparación fue exitosa
     if(stmt === false) die('Eror enla preparacion de la consulta: ' . htmlspecialchars($conexion->error));
