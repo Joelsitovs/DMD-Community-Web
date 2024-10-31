@@ -154,7 +154,7 @@ box-shadow: 0 0 1px 1px rgba(13, 13, 13, 0.774);
 .input_box .input_submit:hover{
     background: #f1c40f;
     color: #000;
-    border: 1px solid white;
+    border: 2px solid white;
 }
 
 @media only screen and (max-width: 564px){
