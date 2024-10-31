@@ -43,8 +43,8 @@ function usuario_existente($conexion, $usuario) {
     // Cerrar la consulta
     $stmt->close();
 }
-// Funcion para encritar la contraseña
 
+// Funcion para encritar la contraseña
 function encriptar_contraseña($contraseña){
     return password_hash($contraseña, PASSWORD_DEFAULT);
 }

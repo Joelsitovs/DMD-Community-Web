@@ -34,7 +34,7 @@ function usuario_existente($conexion,$usuario){
     $sql = "SELECT * FROM users WHERE usuario = ?";
     $stmt = $conexion->prepare($sql);
     // Verificar si la preparación fue exitosa
-    if(stmt === false) die('Eror enla preparacion de la consulta: ' . htmlspecialchars($conexion->error));
+    if($stmt === false) die('Eror enla preparacion de la consulta: ' . htmlspecialchars($conexion->error));
     // Vincular los parametros
     $stmt->bind_param("s",$usuario);
     // Ejecutar la consulta
