@@ -24,13 +24,13 @@ include 'conexionroot.php';
             </div>
             <form action="Comprobacion.php" method="post">
             <div class="input_box">
-                <input type="text" id="user" class="input-field" required>
+                <input type="text" name="username" id="user" class="input-field" required>
                 <label for="user" class="label">Username</label>
                 <i class="bx bx-user icon"></i>
 
             </div>
             <div class="input_box">
-                <input type="password" id="pass" class="input-field" required>
+                <input type="password" name="passwd" id="pass" class="input-field" required>
                 <label for="pass" class="label">Password</label>
                 <i class="bx bx-lock-alt icon"></i>
             </div>
@@ -38,7 +38,7 @@ include 'conexionroot.php';
 
 
                 <div class="input_box">
-                    <input type="password" id="confirm_pass" class="input-field" required>
+                    <input type="password" name="passwd_confirm"id="confirm_pass" class="input-field" required>
                     <label for="confirm_pass" class="label">Confirm Password</label>
                     <i class="bx bx-lock-alt icon"></i>
                 </div>
