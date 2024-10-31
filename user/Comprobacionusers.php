@@ -13,11 +13,7 @@ function campos_requeridos($usuario,$contraseña,$contraseña_confirm){
 
 // Funcion para comparar contraseñas
 function comparar_contraseñas($contraseña,$contraseña_confirm){
-        // Normaliza las contraseñas eliminando espacios en blanco
-        $contraseña = trim($contraseña);
-        $contraseña_confirm = trim($contraseña_confirm);
-        // Compara las contraseñas
-        return $contraseña === $contraseña_confirm;
+    return ($contraseña === $contraseña_confirm);
 }
 
 // Funcion para redirigir con mensaje de error
