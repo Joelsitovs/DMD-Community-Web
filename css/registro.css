@@ -96,7 +96,7 @@ a:hover{
     background: transparent;
     color: #fff;
     padding-inline: 20px 50px;
-    border: 1px solid #fff;
+    border: 2px solid black;
     border-radius: 30px;    
     outline: none;
 }
@@ -154,6 +154,7 @@ box-shadow: 0 0 1px 1px rgba(13, 13, 13, 0.774);
 .input_box .input_submit:hover{
     background: #f1c40f;
     color: #000;
+    border: 2px solid white;
 }
 
 @media only screen and (max-width: 564px){
@@ -176,4 +177,22 @@ box-shadow: 0 0 1px 1px rgba(13, 13, 13, 0.774);
         -webkit-text-fill-color: rgb(0, 0, 0); /* Cambia el color del texto */
         border: 10px solid rgb(255, 255, 255); /* Cambia el color del borde */
         -webkit-box-shadow: 0 0 0px 105px white inset; /* Cambia el color del fondo */
+    }
+    .error{
+        background-color: #f8d7da; /* Fondo verde claro */
+        color: red; /* Texto verde oscuro */
+        padding: 10px; /* Espaciado interno */
+        border: 1px solid #f5c6cb; /* Borde verde */
+        border-radius: 5px; /* Bordes redondeados */
+        margin-bottom: 20px; /* Espaciado inferior */
+        text-align: center;
+    }
+    .success{
+        background-color: #d4edda; /* Fondo verde claro */
+        color: #155724; /* Texto verde oscuro */
+        padding: 10px; /* Espaciado interno */
+        border: 1px solid #c3e6cb; /* Borde verde */
+        border-radius: 5px; /* Bordes redondeados */
+        margin-bottom: 20px; /* Espaciado inferior */
+        text-align: center;
     }
