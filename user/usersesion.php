@@ -30,7 +30,7 @@ $success = isset($_GET['success']) ? htmlspecialchars($_GET['success']) : '';
             <?php endif; ?>
 
             <!-- Formulario de registro -->
-            <form action="./Comprobacionroot.php" method="post">
+            <form action="./Comprobacionusers.php" method="post">
                 <div class="input_box">
                     <input type="text" name="username" id="user" class="input-field" required />
                     <label for="user" class="label">Username</label>
