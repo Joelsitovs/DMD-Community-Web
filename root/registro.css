@@ -179,7 +179,7 @@ box-shadow: 0 0 1px 1px rgba(13, 13, 13, 0.774);
         -webkit-box-shadow: 0 0 0px 105px white inset; /* Cambia el color del fondo */
     }
     .error{
-        background-color: #d4edda; /* Fondo verde claro */
+        background-color: #f8d7da; /* Fondo verde claro */
         color: red; /* Texto verde oscuro */
         padding: 10px; /* Espaciado interno */
         border: 1px solid #c3e6cb; /* Borde verde */
