@@ -14,9 +14,9 @@
     <div class="wrapper">
         <div class="login_box">
             <div class="login-header">
-                <span>Register</span>
+                <span>Login</span>
             </div>
-            <form action="registro.php" method="post">
+            <form action="loginroot.php" method="post">
             <div class="input_box">
                 <input type="text" id="user" class="input-field" required>
                 <label for="user" class="label">Username</label>
@@ -28,14 +28,6 @@
                 <label for="pass" class="label">Password</label>
                 <i class="bx bx-lock-alt icon"></i>
             </div>
-
-
-
-                <div class="input_box">
-                    <input type="password" id="confirm_pass" class="input-field" required>
-                    <label for="confirm_pass" class="label">Confirm Password</label>
-                    <i class="bx bx-lock-alt icon"></i>
-                </div>
                 <div class="input_box">
                     <input type="submit" value="Register" class="input_submit">
                 </div>
