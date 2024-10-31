@@ -178,3 +178,21 @@ box-shadow: 0 0 1px 1px rgba(13, 13, 13, 0.774);
         border: 10px solid rgb(255, 255, 255); /* Cambia el color del borde */
         -webkit-box-shadow: 0 0 0px 105px white inset; /* Cambia el color del fondo */
     }
+    .error{
+        background-color: #d4edda; /* Fondo verde claro */
+        color: red; /* Texto verde oscuro */
+        padding: 10px; /* Espaciado interno */
+        border: 1px solid #c3e6cb; /* Borde verde */
+        border-radius: 5px; /* Bordes redondeados */
+        margin-bottom: 20px; /* Espaciado inferior */
+        text-align: center;
+    }
+    .success{
+        background-color: #d4edda; /* Fondo verde claro */
+        color: #155724; /* Texto verde oscuro */
+        padding: 10px; /* Espaciado interno */
+        border: 1px solid #c3e6cb; /* Borde verde */
+        border-radius: 5px; /* Bordes redondeados */
+        margin-bottom: 20px; /* Espaciado inferior */
+        text-align: center;
+    }

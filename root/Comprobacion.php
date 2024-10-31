@@ -16,6 +16,11 @@ function redirigir_con_error($mensaje) {
     header("Location: Registerroot.php?error=" . urlencode($mensaje));
     exit();
 }
+// Función para redirigir con mensaje de éxito
+function redirigir_con_exito($mensaje) {
+    header("Location: Registerroot.php?success=" . urlencode($mensaje));
+    exit();
+}
 
 // Función para verificar que los campos no están vacíos
 function campos_requeridos($usuario, $contraseña, $contraseña_confirm) {
@@ -88,7 +93,7 @@ function recibirdatos($conexion) {
 
         // Registrar el nuevo usuario
         registrar_usuario($conexion, $usuario, $contraseña);
-        header("Location: Inicioroot.php");
+        redirigir_con_exito("Usuario registrado con éxito");
         exit();
 
         // Aquí podrías agregar el código para insertar el nuevo usuario en la base de datos
