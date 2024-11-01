@@ -94,10 +94,9 @@ if ($google_account_info) {
     }
 
     // Iniciar sesión con los datos del usuario (incluyendo el nombre)
-    iniciar_sesion(['usuario' => $usuario, 'correo' => $correo]);
-} else {
-    // Manejar el caso donde no se obtiene información de Google
-    redirigir_con_error('No se pudo obtener la información del usuario de Google.');
+    iniciar_sesion(['Usuario' => $nombre]);
+    
+
 }
 
 }
