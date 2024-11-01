@@ -1,6 +1,34 @@
 <?php
 session_start();
+require_once 'vendor/autoload.php';
+require_once 'config.php';
+
 include 'conexionusers.php';
+
+
+// Google
+$client = new Google_Client();
+$client->setClientId($clientID);
+$client->setClientSecret($clientSecret);
+$client->setRedirectUri($redirectURI);
+$client->addScope("email");
+$client->addScope("profile");
+
+if (isset($_GET['code'])) {
+    $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
+    $client->setAccessToken($token['access_token']);
+
+    // Get profile info
+    $google_oauth = new Google_Service_Oauth2($client);
+    $google_account_info = $google_oauth->userinfo->get();
+    $email = $google_account_info->email;
+    $name = $google_account_info->name;
+
+    echo "Email: " . $email . "<br>";
+    echo "Name: " . $name . "<br>";
+
+
+}
 
 // Función para validar entradas
 function validar_usuario($data) {

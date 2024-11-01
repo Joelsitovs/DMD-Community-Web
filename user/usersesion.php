@@ -13,6 +13,20 @@ if (isset($_SESSION['user'])) {
     exit;
 }
 $islogin = isset($_GET['action']) && $_GET['action'] == 'login';
+
+
+
+require_once 'vendor/autoload.php';
+require_once 'config.php';
+
+$client = new Google_Client();
+$client->setClientId($clientID);
+$client->setClientSecret($clientSecret);
+$client->setRedirectUri($redirectURI);
+$client->addScope("email");
+$client->addScope("profile");
+
+
 ?>
 
 <!DOCTYPE html>
@@ -68,6 +82,7 @@ $islogin = isset($_GET['action']) && $_GET['action'] == 'login';
                     <a href="?action=register">Create an account</a>
                 <?php else: ?>
                     <a href="?action=login">Already have an account?</a>
+                    echo "<a href='".$client->createAuthUrl()."'>Iniciar sesión con Google</a>";
                 <?php endif; ?>
             </div>
         </div>
