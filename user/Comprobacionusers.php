@@ -29,7 +29,7 @@ function comparar_contraseñas($contraseña,$contraseña_confirm){
 
 // Funcion para redirigir con mensaje de error
 function redirigir_con_error($mensaje){
-    header("Location: usersesion.php?error=".urlencode($mensaje));
+    header("Location: usersesion.php?action=register&error=".urlencode($mensaje));
     exit();
 }
 
@@ -138,6 +138,7 @@ function recibirdatos($conexion) {
         }
         if (!validar_longitud_contraseña($contraseña)) {
             redirigir_con_error('La contraseña debe tener al menos 8 caracteres');
+        
         }
 
         // Registrar el nuevo usuario
