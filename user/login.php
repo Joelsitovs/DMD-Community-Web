@@ -79,25 +79,24 @@ function registrar_usuario_google($conexion, $nombre, $correo) {
     // Cerrar la consulta
     $stmt->close();
 }
-
 // Función para manejar el inicio de sesión con Google
-function manejar_login_google($client,$conexion) {
+function manejar_login_google($client, $conexion) {
     $google_account_info = obtener_info_google($client);
     if ($google_account_info) {
-        $nombre = $google_account_info->name;
+        $nombre = $google_account_info->name; // Obtén el nombre
         $correo = $google_account_info->email;
 
         // Verificar si el usuario ya existe en la base de datos
         $usuario_existente = usuario_existente_google($conexion, $correo);
         if (!$usuario_existente) {
             registrar_usuario_google($conexion, $nombre, $correo);
-            // Iniciar sesión inmediatamente después de registrar
-            iniciar_sesion(['Usuario' => $correo]);
-        } else {
-            // Iniciar sesión con los datos del usuario existente
-            iniciar_sesion(['Usuario' => $correo]);
         }
 
+        // Iniciar sesión con los datos del usuario (incluyendo el nombre)
+        iniciar_sesion(['Usuario' => $correo, 'Nombre' => $nombre]);
+    } else {
+        // Manejar el caso donde no se obtiene información de Google
+        redirigir_con_error('No se pudo obtener la información del usuario de Google.');
     }
 }
 // Función para iniciar sesión con Google
