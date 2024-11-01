@@ -1,4 +1,11 @@
 <?php
+// Importar las clases necesarias de PHPMailer
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+// Incluir el archivo autoload.php de la carpeta vendor
+require 'vendor/autoload.php';
+
 // Incluir la conexión a la base de datos
 include 'conexionusers.php';
 // Función para validar entradas
@@ -31,7 +38,7 @@ function redirigir_con_exito($mensaje){
 // Funcion para verificar si el usuario ya existe en la base de datos
 function usuario_existente($conexion,$usuario,$correo){
     // Preparar la consulta SQL
-    $sql = "SELECT * FROM users WHERE usuario = ? & correo = ?";
+    $sql = "SELECT * FROM users WHERE usuario = ? OR correo = ?";
     $stmt = $conexion->prepare($sql);
     // Verificar si la preparación fue exitosa
     if($stmt === false) die('Eror enla preparacion de la consulta: ' . htmlspecialchars($conexion->error));
@@ -40,9 +47,9 @@ function usuario_existente($conexion,$usuario,$correo){
     // Ejecutar la consulta
     if(!$stmt->execute()) die('Error en la ejecucion de la consulta: ' . htmlspecialchars($stmt->error));
     // Retornar el resultado si existe
-    return $stmt->get_result()->fetch_assoc(); // Retorna el usuario si existe
-    // Cerrar la consulta
-    $stmt->close();
+    $resultado = $stmt->get_result()->fetch_assoc(); // Retorna el usuario si existe
+    $stmt->close(); // Cerrar la consulta
+    return $resultado;
 }
 // Funcion para encriptar la contraseña
 function encriptar_contraseña($contraseña){
@@ -52,50 +59,88 @@ function encriptar_contraseña($contraseña){
 // Funcion para registrar un nuevo usuario
 function registrar_usuario($conexion,$usuario,$correo,$contraseña){
     // Preparar la consulta SQL
-    $sql = "INSERT INTO users (usuario,correo,contraseña) VALUES (?,?,?)";
+    $sql = "INSERT INTO users (usuario,correo,contraseña,token,confirmado) VALUES (?,?,?,?,0)";
     $stmt = $conexion->prepare($sql);
     // Verificar si la preparacion fue exitosa
     if ($stmt === false) die('Error en la preparacion de la consulta: ' . htmlspecialchars($conexion->error));
     // Encriptar la contraseña
     $hash = encriptar_contraseña($contraseña);
-    // Vincular los parametros 
-    $stmt->bind_param("sss",$usuario,$correo,$hash);
+    $token = bin2hex(random_bytes(15));
+        // Vincular los parámetros 
+        $stmt->bind_param("ssss", $usuario, $correo, $hash, $token);
     // Ejecutar la consulta
     if(!$stmt->execute()) die('Error en la ejecucion de la consulta: ' . htmlspecialchars($stmt->error));
     // Cerrar la consulta
     $stmt->close();
+    // Enviar correo de confirmacion
+    enviar_correo_confirmacion($correo,$token);
 }
-// Funcion para recibir los datos del formulario
-function recibirdatos($conexion){
+
+ // Función para enviar correo de confirmación
+function enviar_correo_confirmacion($correo, $token) {
+    $mail = new PHPMailer(true); // Instanciar PHPMailer
+    try {
+        // Configuración del servidor SMTP
+        $mail->isSMTP(); 
+        $mail->Host = 'smtp.hostinger.com'; 
+        $mail->SMTPAuth = true; 
+        $mail->Username = 'prueba@pruebas.caowthing.es'; // Cambia por tu correo
+        $mail->Password = '4d~i33QPuK^k2U+I'; // Cambia por tu contraseña
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; 
+        $mail->Port = 465; 
+
+        // Remitente y destinatario
+        $mail->setFrom('prueba@pruebas.caowthing.es', 'Prueba'); // Cambia por tu correo // Cambia por tu nombre
+        $mail->addAddress($correo); 
+
+        // Contenido del correo
+        $mail->isHTML(true); 
+        $mail->Subject = 'Confirma tu correo';
+        $mail->Body = 'Por favor confirma tu correo haciendo clic en el siguiente enlace: ' . 
+               'http://' . $_SERVER['HTTP_HOST'] . '/DMD-Community-Web/user/confirmar.php?token=' . $token;
+
+
+        // Enviar el correo
+        $mail->send();
+        echo 'Correo de confirmación enviado';
+    } catch (Exception $e) {
+        echo "Error al enviar el correo: {$mail->ErrorInfo}";
+    }
+    //https://pruebas.caowthing.es/
+}
+// Función para recibir los datos del formulario
+function recibirdatos($conexion) {
     // Verificar si se enviaron los datos del formulario
-    if (isset($_POST['username'],$_POST['passwd'],$_POST['passwd_confirm'] )){
+    if (isset($_POST['username'], $_POST['email'], $_POST['passwd'], $_POST['passwd_confirm'])) {
         // Limpiar y validar los datos
         $usuario = validar_usuario($_POST['username']);
         $correo = validar_usuario($_POST['email']);
         $contraseña = validar_usuario($_POST['passwd']);
         $contraseña_confirm = validar_usuario($_POST['passwd_confirm']);
-        // Verificar si los campos no estan vacios
-        if(!campos_requeridos($usuario,$correo,$contraseña,$contraseña_confirm)){
+
+        // Verificar si los campos no están vacíos
+        if (!campos_requeridos($usuario, $correo, $contraseña, $contraseña_confirm)) {
             redirigir_con_error('Por favor complete todos los campos');
         }
+
         // Verificar si las contraseñas coinciden
-        if(!comparar_contraseñas($contraseña,$contraseña_confirm)){
+        if (!comparar_contraseñas($contraseña, $contraseña_confirm)) {
             redirigir_con_error('Las contraseñas no coinciden');
         }
+
         // Verificar si el usuario ya existe
-        if(usuario_existente($conexion,$usuario,$correo)){
+        if (usuario_existente($conexion, $usuario, $correo)) {
             redirigir_con_error('El usuario o correo ya existe');
         }
+
         // Registrar el nuevo usuario
-        registrar_usuario($conexion,$usuario,$correo,$contraseña);
-        redirigir_con_exito('Usuario registrado con exito');
-        exit();
+        registrar_usuario($conexion, $usuario, $correo, $contraseña);
+        redirigir_con_exito('Usuario registrado con éxito. Por favor confirma tu correo.');
     } else {
         redirigir_con_error('Por favor complete todos los campos');
     }
-
-    
 }
+
 // Recibir los datos del formulario
 recibirdatos($conexion);
 ?>

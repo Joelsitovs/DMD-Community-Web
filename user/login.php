@@ -1,5 +1,6 @@
 <?php
 include './conexionusers.php';
+
 // Función para validar entradas
 function validar_usuario($data) {
     return htmlspecialchars(stripslashes(trim($data)));
@@ -17,7 +18,7 @@ function redirigir_con_error($mensaje) {
 }
 
 // Función para comprobar si el usuario existe en la base de datos y verificar la contraseña
-function comprobar_usuario($conexion, $usuario,$correo, $contraseña) {
+function comprobar_usuario($conexion, $usuario,$correo,$contraseña) {
     $sql = "SELECT * FROM users WHERE usuario = ? OR correo = ?";
     $stmt = $conexion->prepare($sql);
 
@@ -27,23 +28,24 @@ function comprobar_usuario($conexion, $usuario,$correo, $contraseña) {
     }
 
     // Vincular los parámetros
-    $stmt->bind_param("ss", $usuario,$correo);
+    $stmt->bind_param("ss", $usuario,$correo); // Vincula el nombre de usuario o correo en ambas posiciones
 
     // Ejecutar la consulta
     if (!$stmt->execute()) {
         die('Error en la ejecución de la consulta: ' . htmlspecialchars($stmt->error));
     }
 
-    // Obtener el resultado y verificar si la contraseña es correcta
+    // Obtener el resultado
     $resultado = $stmt->get_result()->fetch_assoc();
     $stmt->close();
-
-    // Comprobar si el usuario existe y la contraseña es válida
-    if ($resultado && password_verify($contraseña, $resultado['Contraseña'])) {
-        return $resultado; // Retorna el usuario si la contraseña es correcta
+    
+    if ($resultado && password_verify($contraseña, $resultado['contraseña'])) {
+        return $resultado; // Retorna los datos del usuario si es correcto
     }
-    return false; // Usuario o contraseña incorrectos
+    
+    return false; 
 }
+
 function iniciar_sesion($usuario_datos) {
     session_start();
     $_SESSION['usuario'] = $usuario_datos['usuario']; // Nombre del usuario
@@ -51,28 +53,27 @@ function iniciar_sesion($usuario_datos) {
     exit();
 }
 
-
 // Función para el formulario de login
 function formulario_login($conexion) {
     if (isset($_POST['username'], $_POST['passwd'])) {
         // Validar y asignar valores de entrada
         $usuario = validar_usuario($_POST['username']);
         $contraseña = validar_usuario($_POST['passwd']);
-        $correo = validar_usuario($_POST['username']);
+        $correo = validar_usuario($_POST['username']); // Suponiendo que username puede ser correo
 
-        // Verificar si los campos requeridos no están vacíos
-        if (!campos_requeridos($usuario, $contraseña)) {
-            redirigir_con_error('Todos los campos son requeridos');
-        }
+       // Verificar que los campos no estén vacíos
+    if (empty($usuario) || empty($contraseña)) {
+        redirigir_con_error('Todos los campos son requeridos');
+    }
 
-        // Comprobar si el usuario existe y la contraseña es correcta
-        $usuario_datos = comprobar_usuario($conexion, $usuario,$correo, $contraseña);
-        if (!$usuario_datos) {
+        // Comprobar si el usuario existe y la contraseña es válida
+        $resultado = comprobar_usuario($conexion, $usuario, $correo,$contraseña);
+        if (!$resultado) {
             redirigir_con_error('Usuario o contraseña incorrectos');
         }
-
-        // Iniciar sesión
-        iniciar_sesion($usuario_datos);
+            // Iniciar sesión
+            iniciar_sesion($resultado);
+        
     } else {
         redirigir_con_error('Los datos de inicio de sesión son requeridos.');
     }
@@ -80,6 +81,4 @@ function formulario_login($conexion) {
 
 // Llamada a la función del formulario de login
 formulario_login($conexion);
-
-
 ?>
