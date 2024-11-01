@@ -81,9 +81,12 @@ $client->addScope("profile");
                 <?php if ($islogin): ?>
                     <a href="?action=register">Create an account</a>
                 <?php else: ?>
-                    <a href="?action=login">Already have an account?</a>
-                    echo "<a href='".$client->createAuthUrl()."'>Iniciar sesión con Google</a>";
+                    <a href="?action=login">Already have an account?</a>               
                 <?php endif; ?>
+                <?php
+                echo "<a href='".$client->createAuthUrl()."'>Iniciar sesión con Google</a>";
+                ?>
+
             </div>
         </div>
     </div>
