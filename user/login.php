@@ -19,7 +19,7 @@ function redirigir_con_error($mensaje) {
 
 // Función para comprobar si el usuario existe en la base de datos y verificar la contraseña
 function comprobar_usuario($conexion, $usuario,$correo,$contraseña,$confirmado) {
-    $sql = "SELECT * FROM users WHERE usuario = ? OR correo = ?";
+    $sql = "SELECT * FROM users WHERE usuario = ? OR correo = ? and confirmado = 1";
     $stmt = $conexion->prepare($sql);
 
     // Verificar si la preparación fue exitosa
