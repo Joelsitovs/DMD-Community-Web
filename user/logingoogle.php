@@ -114,7 +114,7 @@ function iniciar_sesion($usuario_datos) {
     $_SESSION['user'] = $usuario_datos['Usuario'];
 
     // Redirigir al usuario a la página de inicio
-    header('Location: ../ola.php');
+    header('Location: ../index.php');
     exit(); 
 }
 // Configurar el cliente de Google

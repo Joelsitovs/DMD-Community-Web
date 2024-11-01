@@ -28,7 +28,6 @@ while ($row = $resultado2->fetch_assoc()) {
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_forward" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/styles.css?v=<?php echo time(); ?>">
-    <link rel="preload" href="https://images-ext-1.discordapp.net/external/E470W-a25yhMQQV3azuZqv4t_efbFuQdNCF0fW0AAHo/https/i.imgur.com/OFiO9Md.png?format=webp&quality=lossless&width=960&height=384" as="image">
 
 </head>
 

@@ -50,7 +50,7 @@ function comprobar_usuario($conexion, $usuario, $correo, $contraseña) {
 function iniciar_sesion($usuario_datos) {
     session_start();
     $_SESSION['usuario'] = $usuario_datos['usuario']; // Nombre del usuario
-    header("Location: ../ola.php"); // Redirigir a la página principal después del login
+    header("Location: ../index.php"); // Redirigir a la página principal después del login
     exit();
 }
 
