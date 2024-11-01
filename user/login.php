@@ -66,17 +66,18 @@ function formulario_login($conexion) {
         if (!campos_requeridos($usuario, $contraseña)) {
             redirigir_con_error('Todos los campos son requeridos');
         }
+  // Comprobar si el usuario existe y la contraseña es válida
+  $resultado = comprobar_usuario($conexion, $usuario, $correo, $contraseña);
+  if (!$resultado) {
+      redirigir_con_error('Usuario o contraseña incorrectos');
+  }
 
-        // Comprobar si el usuario existe y la contraseña es válida
-        $resultado = comprobar_usuario($conexion, $usuario, $correo, $contraseña);
-        if (!$resultado) {
-            redirigir_con_error('Usuario o contraseña incorrectos');
-        }
+  // Verificar si el usuario está confirmado
+  if ($resultado['confirmado'] == 0) {
+      redirigir_con_error('Usuario no confirmado, por favor verifica tu correo');
+  }
 
-        // Verificar si el usuario está confirmado
-        if ($resultado['confirmado'] == 0) {
-            redirigir_con_error('Usuario no confirmado, por favor verifica tu correo');
-        }
+        
 
         // Iniciar sesión
         iniciar_sesion($resultado);
