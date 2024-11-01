@@ -1,5 +1,6 @@
 <?php
 include 'conexion.php';
+session_start(); // Iniciar la sesión
 
 $consulta = "SELECT nombre, fecha_inicio, Premio, Precio_inscripcion, imagen FROM torneos";
 $resultado = $conexion->query($consulta);
