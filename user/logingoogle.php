@@ -17,7 +17,6 @@ function configurar_cliente_google() {
 
     return $client;
 }
-
 // Función para obtener el token de acceso y la información del perfil
 function obtener_info_google($client) {
     if (isset($_GET['code'])) {
@@ -33,7 +32,7 @@ function obtener_info_google($client) {
     return null;
 }
 
-// Función para comprobar si el usuario ya existe en la base de datos de usuarios con Google
+// Funcion para comprobar si el usuario ya existe en la base de datos de usuarios con google
 function usuario_existente_google($conexion, $correo) {
     // Preparar la consulta SQL
     $sql = "SELECT * FROM users_google WHERE correo = ?";
@@ -54,12 +53,15 @@ function usuario_existente_google($conexion, $correo) {
 
     // Retornar el resultado si existe
     return $stmt->get_result()->fetch_assoc(); // Retorna el usuario si existe
+
+    // Cerrar la consulta
+    $stmt->close();
 }
 
 // Función para registrar un nuevo usuario con Google
 function registrar_usuario_google($conexion, $nombre, $correo) {
     // Preparar la consulta SQL
-    $sql = "INSERT INTO users_google (usuario, correo) VALUES (?, ?)";
+    $sql = "INSERT INTO users_google (usuario,correo) VALUES (?, ?)";
     $stmt = $conexion->prepare($sql);
 
     // Verificar si la preparación fue exitosa
@@ -78,29 +80,35 @@ function registrar_usuario_google($conexion, $nombre, $correo) {
     // Cerrar la consulta
     $stmt->close();
 }
-
 // Función para manejar el inicio de sesión con Google
 function manejar_login_google($client, $conexion) {
     $google_account_info = obtener_info_google($client);
-    if ($google_account_info) {
-        // Verifica la estructura y el contenido
-        var_dump($google_account_info); 
-        $nombre = $google_account_info->name; 
-        $correo = $google_account_info->email;
-
-        // Verificar si el usuario ya existe en la base de datos
-        $usuario_existente = usuario_existente_google($conexion, $correo);
-        if (!$usuario_existente) {
-            registrar_usuario_google($conexion, $nombre, $correo);
-        }
-
-        // Iniciar sesión con los datos del usuario (incluyendo el nombre)
-        iniciar_sesion(['Usuario' => $nombre]);
-    } else {
-        // Manejar el caso donde no se obtiene información de Google
-        redirigir_con_error('No se pudo obtener la información del usuario de Google.');
+if ($google_account_info) {
+    var_dump($google_account_info); // Verifica la estructura y el contenido
+    $nombre = $google_account_info->name; 
+    $correo = $google_account_info->email;
+    // Verificar si el usuario ya existe en la base de datos
+    $usuario_existente = usuario_existente_google($conexion, $correo);
+    if (!$usuario_existente) {
+        registrar_usuario_google($conexion, $nombre, $correo);
     }
+
+    // Iniciar sesión con los datos del usuario (incluyendo el nombre)
+    iniciar_sesion(['Usuario' => $nombre]);
+   } else {
+    redirigir_con_error('Error al obtener la información de la cuenta de Google');
+
+    
+
 }
+}
+// Función para redirigir con mensaje de error
+function redirigir_con_error($mensaje) {
+    header("Location: usersesion.php?action=login&error=" . urlencode($mensaje));
+    exit();
+}
+
+
 
 // Función para iniciar sesión con Google
 function iniciar_sesion($usuario_datos) {
@@ -114,13 +122,6 @@ function iniciar_sesion($usuario_datos) {
     header('Location: ../ola.php');
     exit(); 
 }
-
-// Función para redirigir con mensaje de error
-function redirigir_con_error($mensaje) {
-    header("Location: usersesion.php?action=login&error=" . urlencode($mensaje));
-    exit();
-}
-
 // Configurar el cliente de Google
 $client = configurar_cliente_google();
 
