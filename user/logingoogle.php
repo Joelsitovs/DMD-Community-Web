@@ -97,9 +97,6 @@ if ($google_account_info) {
     iniciar_sesion(['Usuario' => $nombre]);
    } else {
     redirigir_con_error('Error al obtener la información de la cuenta de Google');
-
-    
-
 }
 }
 // Función para redirigir con mensaje de error
@@ -107,8 +104,6 @@ function redirigir_con_error($mensaje) {
     header("Location: usersesion.php?action=login&error=" . urlencode($mensaje));
     exit();
 }
-
-
 
 // Función para iniciar sesión con Google
 function iniciar_sesion($usuario_datos) {
