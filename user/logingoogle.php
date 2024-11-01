@@ -27,8 +27,6 @@ function obtener_info_google($client) {
         $google_oauth = new Google_Service_Oauth2($client);
         $userInfo = $google_oauth->userinfo->get();
 
-        // Verificar si se obtienen los datos
-        var_dump($userInfo);
         return $userInfo;
     }
     return null;
