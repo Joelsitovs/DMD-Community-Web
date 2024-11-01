@@ -144,7 +144,7 @@ box-shadow: 0 0 1px 1px rgba(13, 13, 13, 0.774);
     height: 50px;
     background: #fff;
     color: #000;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
     border: none;
     border-radius: 30px;
@@ -196,3 +196,33 @@ box-shadow: 0 0 1px 1px rgba(13, 13, 13, 0.774);
         margin-bottom: 20px; /* Espaciado inferior */
         text-align: center;
     }
+    
+    
+    .button{
+        width: 100%;
+        height: 50px;
+        background: #fff;
+        color: #000;
+        font-size: 16px;
+        font-weight: 600;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .button a{
+        color: #000;
+        text-decoration: none;
+
+    }
+    .button:hover{
+        background: #f1c40f;
+        color: #000;
+        border: 2px solid white;
+    }
+    .button svg{
+        margin-right: 10px;
+    }
+   
