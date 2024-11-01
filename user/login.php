@@ -18,7 +18,7 @@ function redirigir_con_error($mensaje) {
 }
 
 // Función para comprobar si el usuario existe en la base de datos y verificar la contraseña
-function comprobar_usuario($conexion, $usuario,$correo,$contraseña,$confirmado) {
+function comprobar_usuario($conexion, $usuario, $correo, $contraseña) {
     $sql = "SELECT * FROM users WHERE (usuario = ? OR correo = ?) AND confirmado = 1";
     $stmt = $conexion->prepare($sql);
 
@@ -28,7 +28,7 @@ function comprobar_usuario($conexion, $usuario,$correo,$contraseña,$confirmado)
     }
 
     // Vincular los parámetros
-    $stmt->bind_param("ss", $usuario,$correo); // Vincula el nombre de usuario o correo en ambas posiciones
+    $stmt->bind_param("ss", $usuario, $correo); // Vincula el nombre de usuario o correo
 
     // Ejecutar la consulta
     if (!$stmt->execute()) {
@@ -38,7 +38,8 @@ function comprobar_usuario($conexion, $usuario,$correo,$contraseña,$confirmado)
     // Obtener el resultado
     $resultado = $stmt->get_result()->fetch_assoc();
     $stmt->close();
-    
+
+    // Verificar la contraseña
     if ($resultado && password_verify($contraseña, $resultado['contraseña'])) {
         return $resultado; // Retorna los datos del usuario si es correcto
     }
@@ -59,24 +60,26 @@ function formulario_login($conexion) {
         // Validar y asignar valores de entrada
         $usuario = validar_usuario($_POST['username']);
         $contraseña = validar_usuario($_POST['passwd']);
-        $correo = validar_usuario($_POST['username']); // Suponiendo que username puede ser correo
+        $correo = $usuario; // Suponiendo que el nombre de usuario puede ser un correo
 
-       // Verificar que los campos no estén vacíos
-    if (empty($usuario) || empty($contraseña)) {
-        redirigir_con_error('Todos los campos son requeridos');
-    }
+        // Verificar que los campos no estén vacíos
+        if (!campos_requeridos($usuario, $contraseña)) {
+            redirigir_con_error('Todos los campos son requeridos');
+        }
 
         // Comprobar si el usuario existe y la contraseña es válida
-        $resultado = comprobar_usuario($conexion, $usuario, $correo,$contraseña);
+        $resultado = comprobar_usuario($conexion, $usuario, $correo, $contraseña);
         if (!$resultado) {
             redirigir_con_error('Usuario o contraseña incorrectos');
         }
-        if($resultado['confirmado'] == 0){
-                redirigir_con_error('Usuario no confirmado, por favor verifica tu correo');
-            
+
+        // Verificar si el usuario está confirmado
+        if ($resultado['confirmado'] == 0) {
+            redirigir_con_error('Usuario no confirmado, por favor verifica tu correo');
         }
-            // Iniciar sesión
-            iniciar_sesion($resultado);
+
+        // Iniciar sesión
+        iniciar_sesion($resultado);
         
     } else {
         redirigir_con_error('Los datos de inicio de sesión son requeridos.');
