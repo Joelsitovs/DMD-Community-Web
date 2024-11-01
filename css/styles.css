@@ -172,7 +172,8 @@ body {
 }
 
 .card-list .card-link .card-image {
-  width: 100%;
+  width: 210px;
+  height: 120px;
   aspect-ratio: 16/9;
   object-fit: cover;
   border-radius: 10px;
@@ -365,9 +366,9 @@ transform: rotate(-45deg);
 
 /* Estilo para las imágenes dentro de las tarjetas */
 .equipo-card img {
-  width: 90%;
+  width: 120px;
   /* Ajustar el ancho a un 90% del contenedor */
-  height: auto;
+  height:120px;
   /* Mantener la altura automática para conservar la relación de aspecto */
   max-height: 120px;
   /* Altura máxima para evitar que se salga del recuadro */
