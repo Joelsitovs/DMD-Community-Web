@@ -1,6 +1,6 @@
 <?php
 include './conexionusers.php';
-
+session_start(); // Iniciar la sesión
 // Función para validar entradas
 function validar_usuario($data) {
     return htmlspecialchars(stripslashes(trim($data)));
