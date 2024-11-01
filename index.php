@@ -27,7 +27,7 @@ while ($row = $resultado2->fetch_assoc()) {
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_forward" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <link rel="stylesheet" href="./styles.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="./css/styles.css?v=<?php echo time(); ?>">
 </head>
 
 <body>
@@ -43,7 +43,7 @@ while ($row = $resultado2->fetch_assoc()) {
             <li><a href="#torneos">Próximos Torneos</a></li>
             <li><a href="#juegos">Juegos</a></li>
             <li><a href="#noticias">Noticias</a></li>
-            <li><a href="./registro.php">Registro</a></li>
+            <li><a href="./user/usersesion.php">Registro</a></li>
         </ul>
     </nav>
     <!-- Próximos Torneos -->
