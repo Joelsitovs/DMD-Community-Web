@@ -113,7 +113,7 @@ function iniciar_sesion($usuario_datos) {
 
     // Redirigir al usuario a la página de inicio
     header('Location: ../ola.php');
-    exit();
+    exit(); 
 }
 
 
