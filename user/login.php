@@ -25,11 +25,14 @@ function obtener_info_google($client) {
 
         // Obtener información del perfil
         $google_oauth = new Google_Service_Oauth2($client);
-        return $google_oauth->userinfo->get();
+        $userInfo = $google_oauth->userinfo->get();
+
+        // Verificar si se obtienen los datos
+        var_dump($userInfo);
+        return $userInfo;
     }
     return null;
 }
-
 
 // Funcion para comprobar si el usuario ya existe en la base de datos de usuarios con google
 function usuario_existente_google($conexion, $correo) {
