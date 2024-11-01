@@ -1,7 +1,5 @@
 <?php
-
-
-
+include './conexionusers.php';
 // Función para validar entradas
 function validar_usuario($data) {
     return htmlspecialchars(stripslashes(trim($data)));
@@ -19,8 +17,8 @@ function redirigir_con_error($mensaje) {
 }
 
 // Función para comprobar si el usuario existe en la base de datos y verificar la contraseña
-function comprobar_usuario($conexion, $usuario, $contraseña) {
-    $sql = "SELECT * FROM users WHERE Usuario = ?";
+function comprobar_usuario($conexion, $usuario,$correo, $contraseña) {
+    $sql = "SELECT * FROM users WHERE usuario = ? OR correo = ?";
     $stmt = $conexion->prepare($sql);
 
     // Verificar si la preparación fue exitosa
@@ -29,7 +27,7 @@ function comprobar_usuario($conexion, $usuario, $contraseña) {
     }
 
     // Vincular los parámetros
-    $stmt->bind_param("s", $usuario);
+    $stmt->bind_param("ss", $usuario,$correo);
 
     // Ejecutar la consulta
     if (!$stmt->execute()) {
@@ -46,7 +44,12 @@ function comprobar_usuario($conexion, $usuario, $contraseña) {
     }
     return false; // Usuario o contraseña incorrectos
 }
-
+function iniciar_sesion($usuario_datos) {
+    session_start();
+    $_SESSION['usuario'] = $usuario_datos['usuario']; // Nombre del usuario
+    header("Location: ../ola.php"); // Redirigir a la página principal después del login
+    exit();
+}
 
 
 // Función para el formulario de login
@@ -55,6 +58,7 @@ function formulario_login($conexion) {
         // Validar y asignar valores de entrada
         $usuario = validar_usuario($_POST['username']);
         $contraseña = validar_usuario($_POST['passwd']);
+        $correo = validar_usuario($_POST['username']);
 
         // Verificar si los campos requeridos no están vacíos
         if (!campos_requeridos($usuario, $contraseña)) {
@@ -62,7 +66,7 @@ function formulario_login($conexion) {
         }
 
         // Comprobar si el usuario existe y la contraseña es correcta
-        $usuario_datos = comprobar_usuario($conexion, $usuario, $contraseña);
+        $usuario_datos = comprobar_usuario($conexion, $usuario,$correo, $contraseña);
         if (!$usuario_datos) {
             redirigir_con_error('Usuario o contraseña incorrectos');
         }
@@ -77,9 +81,5 @@ function formulario_login($conexion) {
 // Llamada a la función del formulario de login
 formulario_login($conexion);
 
-// Configurar el cliente de Google
-$client = configurar_cliente_google();
 
-// Manejar el inicio de sesión con Google
-manejar_login_google($client, $conexion);
 ?>
