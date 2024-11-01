@@ -1,6 +1,10 @@
 <?php
 include './conexionusers.php';
 session_start(); // Iniciar la sesión
+if (isset($_SESSION['usuario'])) {
+    header("Location: ../index.php?haziniciadosesion"); // Redirigir a la página principal si el usuario ya ha iniciado sesión
+    exit();
+}
 // Función para validar entradas
 function validar_usuario($data) {
     return htmlspecialchars(stripslashes(trim($data)));
