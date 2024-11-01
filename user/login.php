@@ -91,6 +91,7 @@ function manejar_login_google($client) {
         $usuario_existente = usuario_existente_google($conexion, $correo);
             if (!usuario_existente_google) {
                 registrar_usuario_google($conexion, $nombre, $correo);
+                header('Location: ../ola.php');
             }
        // Iniciar sesión con los datos del usuario
        iniciar_sesion(['Usuario' => $correo]); //
