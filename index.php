@@ -1,6 +1,10 @@
 <?php
 include 'conexion.php';
 session_start(); // Iniciar la sesión
+if (isset($_SESSION['usuario'])) {
+    $usuario = $_SESSION['usuario'];
+    exit();
+}
 
 $consulta = "SELECT nombre, fecha_inicio, Premio, Precio_inscripcion, imagen FROM torneos";
 $resultado = $conexion->query($consulta);
@@ -33,6 +37,13 @@ while ($row = $resultado2->fetch_assoc()) {
 </head>
 
 <body>
+    <?php
+    if (isset($_GET['success'])) { ?>
+    <div class="alert success">
+        <?php echo $_GET['success']; ?>
+    </div>
+    <?php } ?>
+    
     <!-- Encabezado -->
     <header class="header">
         <div class="header-content">
