@@ -63,7 +63,7 @@ $client->addScope("profile");
                 <?php if (!$islogin): ?>
                 <div class="input_box">
                     <input type="email" name="email" id="email" class="input-field" required />
-                    <label for="email" class="label">email</label>
+                    <label for="email" class="label">Email</label>
                     <i class="bx bx-envelope icon"></i>
                 </div>
                 <?php endif; ?>
@@ -80,7 +80,7 @@ $client->addScope("profile");
                 </div>
                 <?php endif; ?>
                 <div class="input_box">
-                    <input type="submit" value="<?php echo $islogin ? 'Login' : 'Registro'  ?>" class="input_submit" />
+                    <input type="submit" value="<?php echo $islogin ? 'Login' : 'Register'  ?>" class="input_submit" />
                 </div>
             </form>
             <div class="input_box">
