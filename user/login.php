@@ -18,7 +18,7 @@ function redirigir_con_error($mensaje) {
 }
 
 // Función para comprobar si el usuario existe en la base de datos y verificar la contraseña
-function comprobar_usuario($conexion, $usuario,$correo,$contraseña) {
+function comprobar_usuario($conexion, $usuario,$correo,$contraseña,$confirmado) {
     $sql = "SELECT * FROM users WHERE usuario = ? OR correo = ?";
     $stmt = $conexion->prepare($sql);
 
@@ -70,6 +70,10 @@ function formulario_login($conexion) {
         $resultado = comprobar_usuario($conexion, $usuario, $correo,$contraseña);
         if (!$resultado) {
             redirigir_con_error('Usuario o contraseña incorrectos');
+        }else{
+            if($resultado['confirmado'] == 0){
+                redirigir_con_error('Usuario no confirmado, por favor verifica tu correo');
+            }
         }
             // Iniciar sesión
             iniciar_sesion($resultado);
