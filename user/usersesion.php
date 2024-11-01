@@ -12,8 +12,8 @@ if (isset($_SESSION['user'])) {
     header('Location: ../ola.php');
     exit;
 }
-$islogin = isset($_GET['action']) && $_GET['action'] == 'login';
-
+// Determinar si se está en la acción de login
+$islogin = !isset($_GET['action']) || $_GET['action'] == 'login';
 
 
 require_once 'vendor/autoload.php';
@@ -60,6 +60,13 @@ $client->addScope("profile");
                     <label for="user" class="label">Username</label>
                     <i class="bx bx-user icon"></i>
                 </div>
+                <?php if (!$islogin): ?>
+                <div class="input_box">
+                    <input type="email" name="email" id="email" class="input-field" required />
+                    <label for="email" class="label">email</label>
+                    <i class="bx bx-user icon"></i>
+                </div>
+                <?php endif; ?>
                 <div class="input_box">
                     <input type="password" name="passwd" id="pass" class="input-field" required />
                     <label for="pass" class="label">Password</label>

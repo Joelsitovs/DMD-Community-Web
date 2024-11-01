@@ -7,8 +7,8 @@ function validar_usuario($data) {
 }
 
 // Funcion para Campos requeridos
-function campos_requeridos($usuario,$contraseña,$contraseña_confirm){
-    return !empty($usuario) && !empty($contraseña) && !empty($contraseña_confirm);
+function campos_requeridos($usuario,$correo,$contraseña,$contraseña_confirm){
+    return !empty($usuario) && !empty($correo)  && !empty($contraseña) && !empty($contraseña_confirm);
 }
 
 // Funcion para comparar contraseñas
@@ -29,14 +29,14 @@ function redirigir_con_exito($mensaje){
 }
 
 // Funcion para verificar si el usuario ya existe en la base de datos
-function usuario_existente($conexion,$usuario){
+function usuario_existente($conexion,$usuario,$correo){
     // Preparar la consulta SQL
-    $sql = "SELECT * FROM users WHERE usuario = ?";
+    $sql = "SELECT * FROM users WHERE usuario = ? & correo = ?";
     $stmt = $conexion->prepare($sql);
     // Verificar si la preparación fue exitosa
     if($stmt === false) die('Eror enla preparacion de la consulta: ' . htmlspecialchars($conexion->error));
     // Vincular los parametros
-    $stmt->bind_param("s",$usuario);
+    $stmt->bind_param("ss",$usuario,$correo);
     // Ejecutar la consulta
     if(!$stmt->execute()) die('Error en la ejecucion de la consulta: ' . htmlspecialchars($stmt->error));
     // Retornar el resultado si existe
@@ -50,16 +50,16 @@ function encriptar_contraseña($contraseña){
 }
 
 // Funcion para registrar un nuevo usuario
-function registrar_usuario($conexion,$usuario,$contraseña){
+function registrar_usuario($conexion,$usuario,$correo,$contraseña){
     // Preparar la consulta SQL
-    $sql = "INSERT INTO users (usuario, contraseña) VALUES (?,?)";
+    $sql = "INSERT INTO users (usuario,correo,contraseña) VALUES (?,?,?)";
     $stmt = $conexion->prepare($sql);
     // Verificar si la preparacion fue exitosa
     if ($stmt === false) die('Error en la preparacion de la consulta: ' . htmlspecialchars($conexion->error));
     // Encriptar la contraseña
     $hash = encriptar_contraseña($contraseña);
     // Vincular los parametros 
-    $stmt->bind_param("ss",$usuario,$hash);
+    $stmt->bind_param("sss",$usuario,$correo,$hash);
     // Ejecutar la consulta
     if(!$stmt->execute()) die('Error en la ejecucion de la consulta: ' . htmlspecialchars($stmt->error));
     // Cerrar la consulta
@@ -71,10 +71,11 @@ function recibirdatos($conexion){
     if (isset($_POST['username'],$_POST['passwd'],$_POST['passwd_confirm'] )){
         // Limpiar y validar los datos
         $usuario = validar_usuario($_POST['username']);
+        $correo = validar_usuario($_POST['email']);
         $contraseña = validar_usuario($_POST['passwd']);
         $contraseña_confirm = validar_usuario($_POST['passwd_confirm']);
         // Verificar si los campos no estan vacios
-        if(!campos_requeridos($usuario,$contraseña,$contraseña_confirm)){
+        if(!campos_requeridos($usuario,$correo,$contraseña,$contraseña_confirm)){
             redirigir_con_error('Por favor complete todos los campos');
         }
         // Verificar si las contraseñas coinciden
@@ -82,11 +83,11 @@ function recibirdatos($conexion){
             redirigir_con_error('Las contraseñas no coinciden');
         }
         // Verificar si el usuario ya existe
-        if(usuario_existente($conexion,$usuario)){
-            redirigir_con_error('El usuario ya existe');
+        if(usuario_existente($conexion,$usuario,$correo)){
+            redirigir_con_error('El usuario o correo ya existe');
         }
         // Registrar el nuevo usuario
-        registrar_usuario($conexion,$usuario,$contraseña);
+        registrar_usuario($conexion,$usuario,$correo,$contraseña);
         redirigir_con_exito('Usuario registrado con exito');
         exit();
     } else {
