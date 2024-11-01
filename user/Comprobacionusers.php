@@ -12,6 +12,10 @@ include 'conexionusers.php';
 function validar_usuario($data) {
     return htmlspecialchars(stripslashes(trim($data)));
 }
+// Función para validar la longitud de la contraseña
+function validar_longitud_contraseña($contraseña) {
+    return strlen($contraseña) >= 8; // Verifica que la longitud sea al menos 8
+}
 
 // Funcion para Campos requeridos
 function campos_requeridos($usuario,$correo,$contraseña,$contraseña_confirm){
@@ -131,6 +135,9 @@ function recibirdatos($conexion) {
         // Verificar si el usuario ya existe
         if (usuario_existente($conexion, $usuario, $correo)) {
             redirigir_con_error('El usuario o correo ya existe');
+        }
+        if (!validar_longitud_contraseña($contraseña)) {
+            redirigir_con_error('La contraseña debe tener al menos 8 caracteres');
         }
 
         // Registrar el nuevo usuario
