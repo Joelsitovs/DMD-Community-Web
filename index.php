@@ -2,9 +2,8 @@
 include 'conexion.php';
 session_start();    // Verificamos si el usuario ha iniciado sesión
 if (isset($_SESSION['user'])) { // Cambia 'user' por la clave que uses para almacenar el nombre de usuario
-    echo "Hola, " . htmlspecialchars($_SESSION['user']) . ", acabas de iniciar sesión.";
-} else {
-    echo "No has iniciado sesión. Por favor, inicia sesión para continuar.";
+    // mostrar index
+    header('Location: ./index.php');
 }
 
 $consulta = "SELECT nombre, fecha_inicio, Premio, Precio_inscripcion, imagen FROM torneos";
