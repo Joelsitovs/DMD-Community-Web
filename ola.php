@@ -12,6 +12,6 @@ echo "Hola acabas de inicar sesión";
     <title>Document</title>
 </head>
 <body>
-<a href="./user/logout.php">Cerrar sesión</a>
+<a href="./handlers/logout.php">Cerrar sesión</a>
 </body>
 </html>
