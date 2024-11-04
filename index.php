@@ -1,11 +1,7 @@
 <?php
 include 'conexion.php';
 session_start();    // Verificamos si el usuario ha iniciado sesión
-if (isset($_SESSION['user'])) {
-    $usuario = $_SESSION['user'];
-} else {
-    $usuario = null;
-}   
+
 $consulta = "SELECT nombre, fecha_inicio, Premio, Precio_inscripcion, imagen FROM torneos";
 $resultado = $conexion->query($consulta);
 
