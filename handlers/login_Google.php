@@ -55,6 +55,7 @@ function usuario_existente_google($conexion, $correo) {
 
     // Cerrar la consulta
     $stmt->close();
+    
 }
 
 // Función para registrar un nuevo usuario con Google
