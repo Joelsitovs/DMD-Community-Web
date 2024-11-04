@@ -16,8 +16,8 @@ if (isset($_SESSION['user'])) {
 $islogin = !isset($_GET['action']) || $_GET['action'] == 'login';
 
 
-require_once 'vendor/autoload.php';
-require_once 'config.php';
+require_once './vendor/autoload.php';
+require_once './config.php';
 
 $client = new Google_Client();
 $client->setClientId($clientID);
@@ -37,7 +37,7 @@ $client->addScope("profile");
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><?php $islogin ? 'Login': 'Registro';?> </title>
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../css/registro.css?v=<?php echo time(); ?>" />
+    <link rel="stylesheet" href="./css/registro.css?v=<?php echo time(); ?>" />
 </head>
 
 <body>
@@ -54,7 +54,7 @@ $client->addScope("profile");
             <?php endif; ?>
 
             <!-- Formulario de registro -->
-            <form action="<?php echo $islogin ? './login.php' :  './Comprobacionusers.php';?>" method="post">
+            <form action="<?php echo $islogin ? './handlers/procesarFormulario.php' :  './handlers/procesarRegistro.php';?>" method="post">
                 <div class="input_box">
                     <input type="text" name="username" id="user" class="input-field" required />
                     <label for="user" class="label">Username</label>
@@ -84,7 +84,7 @@ $client->addScope("profile");
                 </div>
             </form>
             <div class="input_box">
-            <a href="<?php echo $client->createAuthUrl(); ?>">
+            <a href="<?php echo $client->createAuthUrl(); ?>" class="a_google">
                 <button class="button">
                 <svg data-testid="geist-icon" height="16" stroke-linejoin="round" viewBox="0 0 16 16" width="16" style="color: currentcolor;"><path d="M8.15991 6.54543V9.64362H12.4654C12.2763 10.64 11.709 11.4837 10.8581 12.0509L13.4544 14.0655C14.9671 12.6692 15.8399 10.6182 15.8399 8.18188C15.8399 7.61461 15.789 7.06911 15.6944 6.54552L8.15991 6.54543Z" fill="#4285F4"></path>
 	<path d="M3.6764 9.52268L3.09083 9.97093L1.01807 11.5855C2.33443 14.1963 5.03241 16 8.15966 16C10.3196 16 12.1305 15.2873 13.4542 14.0655L10.8578 12.0509C10.1451 12.5309 9.23598 12.8219 8.15966 12.8219C6.07967 12.8219 4.31245 11.4182 3.67967 9.5273L3.6764 9.52268Z" fill="#34A853"></path>

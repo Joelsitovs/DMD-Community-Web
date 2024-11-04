@@ -1,5 +1,5 @@
 <?php
-include './conexionusers.php';
+include '../sql/conexionsql_user.php'; // Incluir el archivo de conexión a la base de datos
 
 // Función para validar entradas
 function validar_usuario($data) {
@@ -13,7 +13,7 @@ function campos_requeridos($usuario, $contraseña) {
 
 // Función para redirigir con mensaje de error
 function redirigir_con_error($mensaje) {
-    header("Location: usersesion.php?action=login&error=" . urlencode($mensaje));
+    header("Location: ../login.php?action=login&error=" . urlencode($mensaje));
     exit();
 }
 
@@ -49,7 +49,7 @@ function comprobar_usuario($conexion, $usuario, $correo, $contraseña) {
 
 function iniciar_sesion($usuario_datos) {
     session_start();
-    $_SESSION['usuario'] = $usuario_datos['usuario']; // Nombre del usuario
+    $_SESSION['user'] = $usuario_datos['usuario']; // Nombre del usuario
     header("Location: ../index.php"); // Redirigir a la página principal después del login
     exit();
 }

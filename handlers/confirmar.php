@@ -1,11 +1,11 @@
 <?php
 
-include 'conexionusers.php';
+include '../sql/conexionsql_user.php';
 
 // Funcion para redirigir con mensaje de error o exito
  function redirigir($mensaje, $success = true){
     $tipo = $success ? 'success' : 'error';
-    header("Location: usersesion.php?$tipo=".urlencode($mensaje));
+    header("Location: ../login.php?$tipo=".urlencode($mensaje));
  }
 
  // Verificar si se ha enviado un token 

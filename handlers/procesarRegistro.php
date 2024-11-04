@@ -4,10 +4,10 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 // Incluir el archivo autoload.php de la carpeta vendor
-require 'vendor/autoload.php';
+require '../vendor/autoload.php';
 
 // Incluir la conexión a la base de datos
-include 'conexionusers.php';
+include '../sql/conexionsql_user.php';
 // Función para validar entradas
 function validar_usuario($data) {
     return htmlspecialchars(stripslashes(trim($data)));
@@ -29,13 +29,13 @@ function comparar_contraseñas($contraseña,$contraseña_confirm){
 
 // Funcion para redirigir con mensaje de error
 function redirigir_con_error($mensaje){
-    header("Location: usersesion.php?action=register&error=".urlencode($mensaje));
+    header("Location: ../login.php?action=register&error=".urlencode($mensaje));
     exit();
 }
 
 // Funcion para redirigir con mensaje de exito
 function redirigir_con_exito($mensaje){
-    header("Location: usersesion.php?success=".urlencode($mensaje));
+    header("Location: ../login.php?success=".urlencode($mensaje));
     exit();
 }
 
@@ -86,9 +86,9 @@ function enviar_correo_confirmacion($correo, $token) {
     try {
         // Configuración del servidor SMTP
         $mail->isSMTP(); 
-        $mail->Host = 'smtp.hostinger.com'; 
+        $mail->Host = 'smtp.hostinger.com';  // Cambia por tu servidor SMTP
         $mail->SMTPAuth = true; 
-        $mail->Username = 'prueba@pruebas.caowthing.es'; // Cambia por tu correo
+        $mail->Username = 'prueba@pruebas.prueba.es'; // Cambia por tu correo
         $mail->Password = '4d~i33QPuK^k2U+I'; // Cambia por tu contraseña
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; 
         $mail->Port = 465; 
@@ -101,7 +101,7 @@ function enviar_correo_confirmacion($correo, $token) {
         $mail->isHTML(true); 
         $mail->Subject = 'Confirma tu correo';
         $mail->Body = 'Por favor confirma tu correo haciendo clic en el siguiente enlace: ' . 
-               'http://' . $_SERVER['HTTP_HOST'] . '/user/confirmar.php?token=' . $token;
+               'https://' . $_SERVER['HTTP_HOST'] . '/handlers/confirmar.php?token=' . $token;
 
 
         // Enviar el correo

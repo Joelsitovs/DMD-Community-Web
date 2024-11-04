@@ -53,7 +53,7 @@ while ($row = $resultado2->fetch_assoc()) {
             <li><a href="#torneos">Próximos Torneos</a></li>
             <li><a href="#juegos">Juegos</a></li>
             <li><a href="#noticias">Noticias</a></li>
-            <li><a href="./user/usersesion.php">Registro</a></li>
+            <li><a href="./login.php">Registro</a></li>
         </ul>
     </nav>
     <!-- Próximos Torneos -->
