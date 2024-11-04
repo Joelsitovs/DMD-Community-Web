@@ -27,7 +27,4 @@ $clientSecret = $_ENV['CLIENT_SECRET'] ?? '';
 $redirectURI = $_ENV['REDIRECT_URI'] ?? '';
 
 
-// Ahora puedes usar las variables de entorno en tu código
-$clientID = $_ENV['CLIENT_ID'];
-$clientSecret = $_ENV['CLIENT_SECRET'];
-$redirectURI = $_ENV['REDIRECT_URI'];
+
