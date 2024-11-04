@@ -57,7 +57,12 @@ while ($row = $resultado2->fetch_assoc()) {
             <li><a href="#torneos">Próximos Torneos</a></li>
             <li><a href="#juegos">Juegos</a></li>
             <li><a href="#noticias">Noticias</a></li>
+            <?php if(!isset($_SESSION['user'])) { ?>
             <li><a href="./login.php">Registro</a></li>
+            <?php }else { ?>
+            <li><a href="./handlers/logout.php">Cerrar Sesión</a></li>
+            <?php } ?>
+
         </ul>
     </nav>
     <!-- Próximos Torneos -->
