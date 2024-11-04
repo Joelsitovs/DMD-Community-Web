@@ -8,16 +8,12 @@ $success = isset($_GET['success']) ? htmlspecialchars($_GET['success']) : '';
 // si el usuario ya creo una cuenta, lo rediroge a iniciar sesión
 // si pulsa en already have an account lo redirige a iniciar sesión
 
-// Verificamos si el usuario ha iniciado sesión
-if (isset($_SESSION['user'])) { // Cambia 'user' por la clave que uses para almacenar el nombre de usuario
-    echo "Hola, " . htmlspecialchars($_SESSION['user']) . ", acabas de iniciar sesión.";
-} else {
-    echo "No has iniciado sesión. Por favor, inicia sesión para continuar.";
+if (isset($_SESSION['user'])) {
+    header('Location: ../ola.php');
+    exit;
 }
 // Determinar si se está en la acción de login
 $islogin = !isset($_GET['action']) || $_GET['action'] == 'login';
-
-
 
 
 ?>
