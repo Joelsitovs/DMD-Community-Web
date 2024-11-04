@@ -29,6 +29,4 @@ $conexion = new mysqli($host, $user, $pass, $dbname);
 // Comprobar si la conexión fue exitosa
 if ($conexion->connect_error) {
     die("La conexión falló: " . $conexion->connect_error);
-} else {
-    echo "Conexión exitosa.";
-}
+} 
