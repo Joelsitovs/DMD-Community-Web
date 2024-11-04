@@ -1,6 +1,6 @@
 <?php
 include 'conexion.php';
-session_start(); // Iniciar la sesión
+
 // Verificamos si el usuario ha iniciado sesión
 if (isset($_SESSION['user'])) { // Cambia 'user' por la clave que uses para almacenar el nombre de usuario
     echo "Hola, " . htmlspecialchars($_SESSION['user']) . ", acabas de iniciar sesión.";
