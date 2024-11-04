@@ -100,7 +100,7 @@ if ($google_account_info) {
 }
 // Función para redirigir con mensaje de error
 function redirigir_con_error($mensaje) {
-    header("Location: usersesion.php?action=login&error=" . urlencode($mensaje));
+    header("Location: login.php?action=login&error=" . urlencode($mensaje));
     exit();
 }
 
