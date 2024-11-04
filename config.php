@@ -20,12 +20,14 @@ function loadEnv($filePath = __DIR__ . '/.env') {
     }
 }
 
-// Llama a la función para cargar las variables de entorno
+// Carga las variables de entorno
 loadEnv();
+$clientID = $_ENV['CLIENT_ID'] ?? ''; // Verifica que las variables están disponibles
+$clientSecret = $_ENV['CLIENT_SECRET'] ?? '';
+$redirectURI = $_ENV['REDIRECT_URI'] ?? '';
+
 
 // Ahora puedes usar las variables de entorno en tu código
-$clientID = $_ENV['CLIENT_ID'] ?? null; // Usa null coalescing para manejar la ausencia de la clave
-$clientSecret = $_ENV['CLIENT_SECRET'] ?? null;
-$redirectURI = $_ENV['REDIRECT_URI'] ?? null;
-
-
+$clientID = $_ENV['CLIENT_ID'];
+$clientSecret = $_ENV['CLIENT_SECRET'];
+$redirectURI = $_ENV['REDIRECT_URI'];

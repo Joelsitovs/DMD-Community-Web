@@ -88,13 +88,13 @@ function enviar_correo_confirmacion($correo, $token) {
         $mail->isSMTP(); 
         $mail->Host = 'smtp.hostinger.com';  // Cambia por tu servidor SMTP
         $mail->SMTPAuth = true; 
-        $mail->Username = 'prueba@pruebas.prueba.es'; // Cambia por tu correo
+        $mail->Username = 'no-reply@olas.caowthing.es'; // Cambia por tu correo
         $mail->Password = '4d~i33QPuK^k2U+I'; // Cambia por tu contraseña
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; 
         $mail->Port = 465; 
 
         // Remitente y destinatario
-        $mail->setFrom('prueba@pruebas.caowthing.es', 'Prueba'); // Cambia por tu correo // Cambia por tu nombre
+        $mail->setFrom('no-reply@olas.caowthing.es', 'noreply'); // Cambia por tu correo // Cambia por tu nombre
         $mail->addAddress($correo); 
 
         // Contenido del correo
