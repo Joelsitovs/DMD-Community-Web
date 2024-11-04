@@ -13,7 +13,6 @@ function loadEnv($filePath = __DIR__ . '/.env') {
         if (strpos($line, '=') === false) {
             continue; // O puedes lanzar una excepción
         }
-
         // Divide la línea en clave y valor
         list($key, $value) = explode('=', $line, 2);
         // Asigna cada variable a $_ENV
