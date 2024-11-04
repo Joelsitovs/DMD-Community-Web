@@ -1,5 +1,4 @@
 <?php
-
 require_once '../vendor/autoload.php';
 require_once '../config.php';
 include '../sql/conexionsql_user.php'; // Incluir el archivo de conexión a la base de datos
@@ -56,6 +55,7 @@ function usuario_existente_google($conexion, $correo) {
 
     // Cerrar la consulta
     $stmt->close();
+    
 }
 
 // Función para registrar un nuevo usuario con Google
@@ -101,7 +101,7 @@ if ($google_account_info) {
 }
 // Función para redirigir con mensaje de error
 function redirigir_con_error($mensaje) {
-    header("Location: usersesion.php?action=login&error=" . urlencode($mensaje));
+    header("Location: login.php?action=login&error=" . urlencode($mensaje));
     exit();
 }
 

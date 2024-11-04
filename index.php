@@ -59,6 +59,7 @@ while ($row = $resultado2->fetch_assoc()) {
             <li><a href="./handlers/logout.php">Cerrar Sesión</a></li>
             <?php } ?>
 
+            
         </ul>
     </nav>
     <!-- Próximos Torneos -->
