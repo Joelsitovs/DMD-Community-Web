@@ -15,6 +15,17 @@ if (isset($_SESSION['user'])) {
 // Determinar si se está en la acción de login
 $islogin = !isset($_GET['action']) || $_GET['action'] == 'login';
 
+// Incluir el archivo de configuración de Google
+require_once './vendor/autoload.php';
+require_once './config.php';
+
+$client = new Google_Client();
+$client->setClientId($clientID);
+$client->setClientSecret($clientSecret);
+$client->setRedirectUri($redirectURI);
+$client->addScope("email");
+$client->addScope("profile");
+
 
 ?>
 
