@@ -1,5 +1,6 @@
 <?php
-include 'conexion.php';
+include './sql/conexionsql_user.php'; // Incluir el archivo de conexión a la base de datos
+session_start();    // Verificamos si el usuario ha iniciado sesión
 
 $consulta = "SELECT nombre, fecha_inicio, Premio, Precio_inscripcion, imagen FROM torneos";
 $resultado = $conexion->query($consulta);
@@ -29,9 +30,17 @@ while ($row = $resultado2->fetch_assoc()) {
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_forward" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/styles.css?v=<?php echo time(); ?>">
+
 </head>
 
 <body>
+    <?php
+    if (isset($_GET['success'])) { ?>
+    <div class="alert success">
+        <?php echo $_GET['success']; ?>
+    </div>
+    <?php } ?>
+    
     <!-- Encabezado -->
     <header class="header">
         <div class="header-content">
@@ -44,7 +53,12 @@ while ($row = $resultado2->fetch_assoc()) {
             <li><a href="#torneos">Próximos Torneos</a></li>
             <li><a href="#juegos">Juegos</a></li>
             <li><a href="#noticias">Noticias</a></li>
-            <li><a href="./user/usersesion.php">Registro</a></li>
+            <?php if(!isset($_SESSION['user'])) { ?>
+            <li><a href="./login.php">Registro</a></li>
+            <?php }else { ?>
+            <li><a href="./handlers/logout.php">Cerrar Sesión</a></li>
+            <?php } ?>
+
         </ul>
     </nav>
     <!-- Próximos Torneos -->

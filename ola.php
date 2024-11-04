@@ -1,6 +1,6 @@
 <?php
 session_start();
-echo "Hola Mundo";
+echo "Hola acabas de inicar sesión";
 
 
 ?>
@@ -12,6 +12,6 @@ echo "Hola Mundo";
     <title>Document</title>
 </head>
 <body>
-<a href="./user/logout.php">Cerrar sesión</a>
+<a href="./handlers/logout.php">Cerrar sesión</a>
 </body>
 </html>
