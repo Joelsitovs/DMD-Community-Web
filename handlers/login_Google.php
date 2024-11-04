@@ -1,5 +1,4 @@
 <?php
-
 require_once '../vendor/autoload.php';
 require_once '../config.php';
 include '../sql/conexionsql_user.php'; // Incluir el archivo de conexión a la base de datos
